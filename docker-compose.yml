@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.29
+    environment:
+      MYSQL_DATABASE: lportal
+      MYSQL_ROOT_PASSWORD: root
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-client-handshake=FALSE --lower-case-table-names=0
+    volumes:
+      - ./mysql/data:/var/lib/mysql:rw
+    user: mysql
+    ports:
+      - "3306:3306"
