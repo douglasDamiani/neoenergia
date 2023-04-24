@@ -22,7 +22,12 @@ jdbc.default.password=root
 
 ```docker compose up```
 
-<p>Após rodar o comando, espere o container iniciar e ainda na raiz do projeto rode o comando:</p>
+<p>Após rodar o comando, espere o container iniciar e faça o restore do banco de dados com o seguinte comando:</p>
+
+```cat state/dump.sql | docker exec -i neoenergia-workspace-mysql-1 mysql -u root --password=root lportal```
+
+
+<p>Espere o comando finalizar e rode o comando</p>
 
 ```blade server run```
 
