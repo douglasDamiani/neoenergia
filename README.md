@@ -1,4 +1,4 @@
-<h1>Passos para o setup do ambiente local</h1>
+<h1>Primeiros Passos para o setup do ambiente local</h1>
 
 <p>Antes de subir o ambiente local é necessário a intalação do Blade CLI</p>
 <p>Siga as intruções para instalar o Blade nesse link aqui: <a href="https://help.liferay.com/hc/en-us/articles/360017885232-Installing-Blade-CLI-">Instalação do Blade CLI</a></p>
@@ -25,6 +25,10 @@ jdbc.default.password=root
 <p>Após rodar o comando, espere o container iniciar e faça o restore do banco de dados com o seguinte comando:</p>
 
 ```cat state/dump.sql | docker exec -i neoenergia-workspace-mysql-1 mysql -u root --password=root lportal```
+
+<p>Rode o seguinte comando para fazer o restore do document library:</p>
+
+```tar -xvf state/volume.tgz -C .```
 
 
 <p>Espere o comando finalizar e rode o comando</p>
