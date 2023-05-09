@@ -1,7 +1,75 @@
-.conteudo-em-destaque {
-  color: inherit;
+.neo_conteudo_destaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 137px;
+}
+@media screen and (max-width: 768px) {
+  .neo_conteudo_destaque {
+    flex-direction: column;
+    gap: 40px;
+    margin: 0;
+  }
+}
+.neo_conteudo_destaque .neo_conteudo_destaque__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 539px;
+  height: 468px;
+}
+@media screen and (max-width: 768px) {
+  .neo_conteudo_destaque .neo_conteudo_destaque__text {
+    padding: 0px;
+    gap: 18px;
+    width: 234px;
+  }
+}
+.neo_conteudo_destaque .neo_conteudo_destaque__text h3 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  color: #3a3735;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .neo_conteudo_destaque .neo_conteudo_destaque__text h3 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+.neo_conteudo_destaque .neo_conteudo_destaque__text p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
   font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  line-height: 28px;
+  color: #3a3735;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .neo_conteudo_destaque .neo_conteudo_destaque__text p {
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+.neo_conteudo_destaque .neo_conteudo_destaque__img {
+  width: 426px;
+  height: 468px;
+}
+@media screen and (max-width: 768px) {
+  .neo_conteudo_destaque .neo_conteudo_destaque__img {
+    width: 326px;
+    height: 356px;
+  }
+}
+.neo_conteudo_destaque .neo_conteudo_destaque__img img {
+	object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
