@@ -35,3 +35,10 @@ jdbc.default.password=root
 
 ```blade server run```
 
+<p>Vá até a pasta activation, copie a activation key e cole na pasta bundles/deploy</p>
+
+<p>Espere o portal subir e então acesse <a href="http://localhost:8080">localhost:8080</a></p>
+
+```user: test@liferay.com```
+```senha: test@123```
+
