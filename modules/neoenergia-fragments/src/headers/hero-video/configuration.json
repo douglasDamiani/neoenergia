@@ -1,0 +1,37 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "isVideo",
+          "label": "Banner de video",
+          "description": "Cheque se for um banner de vídeo",
+          "type": "checkbox",
+          "defaultValue": false
+        },
+        {
+          "name": "videoURL",
+          "label": "URL do vídeo",
+          "description": "Insira aqui o link do vídeo (MP4)",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "bannerURL",
+          "label": "URL do banner",
+          "description": "URL que o banner redireciona ao clicar",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        }
+      ]
+    }
+  ]
+}

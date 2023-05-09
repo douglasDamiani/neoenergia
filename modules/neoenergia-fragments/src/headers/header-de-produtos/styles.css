@@ -1,0 +1,72 @@
+.neo_hero_products {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+  height: 160px;
+}
+
+@media (min-width: 1080px) {
+  .neo_hero_products {
+    height: 360px;
+  }
+}
+
+.neo_hero_products img,
+.neo_hero_products picture {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 160px;
+}
+
+@media (min-width: 1080px) {
+
+  .neo_hero_products img,
+  .neo_hero_products picture {
+    height: 480px;
+  }
+}
+
+.neo_hero_products_box {
+  position: relative;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px 8px 0 0;
+}
+
+@media (min-width: 1080px) {
+  .neo_hero_products_box {
+    padding: 40px 56px;
+    width: 60%;
+  }
+}
+
+.neo_hero_products_box_intro {
+  display: flex;
+  gap: 24px;
+}
+
+.neo_hero_products_box_intro h1 {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #41493d;
+}
+
+.neo_hero_products_box_intro p {
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .neo_hero_products_box_intro h1 {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    flex: 45%;
+  }
+
+  .neo_hero_products_box_intro p {
+    display: block;
+    flex: 55%;
+  }
+}

@@ -1,0 +1,16 @@
+[#assign tagBanner = "div" /]
+[#if configuration.bannerURL != ""]
+[#assign tagBanner = "a" /]
+[/#if]
+
+<section class="neo_hero_video">
+  <${tagBanner} [#if tagBanner=='a' ]href="${configuration.bannerURL}" [/#if]>
+    [#if configuration.isVideo]
+    <video autoplay loop muted playsinline>
+      <source src="${configuration.videoURL}" type="video/mp4">
+    </video>
+    [#else]
+    <img src="" alt="Placeholder" data-lfr-editable-id="img" data-lfr-editable-type="image">
+    [/#if]
+  </${tagBanner}>
+</section>

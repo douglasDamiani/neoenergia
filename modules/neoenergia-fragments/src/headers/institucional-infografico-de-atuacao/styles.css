@@ -1,0 +1,416 @@
+.neo_infographic {
+  display: flex;
+  height: auto;
+}
+
+.neo_infographic>div:first-child {
+  padding: 16px;
+  background: #213914;
+  flex: 100%;
+}
+
+.neo_infographic>div:first-child h1,
+.neo_infographic>div:first-child p {
+  color: #ffffff;
+}
+
+.neo_infographic>div:last-child {
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .neo_infographic {
+    height: 540px;
+  }
+
+  .neo_infographic>div:first-child {
+    flex: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .neo_infographic>div:last-child {
+    flex: 80%;
+    display: flex;
+  }
+}
+
+.neo_infographic_row {
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+}
+
+.neo_infographic_row>div {
+  display: flex;
+  flex: 50%;
+}
+
+.neo_infographic_row>div>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.neo_infographic_column_1 {
+  flex: 45%;
+  background: #345423;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.neo_infographic_column_1 picture,
+.neo_infographic_column_1 img {
+  object-fit: contain;
+  height: 150px;
+}
+
+@media (min-width: 1250px) {
+
+  .neo_infographic_column_1 picture,
+  .neo_infographic_column_1 img {
+    height: 200px;
+  }
+}
+
+.neo_infographic_column_1>div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.neo_infographic_column_1>div ul {
+  list-style: none;
+  padding: 0;
+}
+
+.neo_infographic_column_1>div ul li {
+  color: white;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.neo_infographic_column_1>div ul li span {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  margin-right: 12px;
+}
+
+.neo_infographic_column_1>div>div span {
+  color: #99ff00;
+  display: block;
+}
+
+.neo_infographic_column_1>div>div span:first-child {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}
+
+.neo_infographic_column_1>div>div span:last-child {
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 52px;
+}
+
+.neo_infographic_column_1::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #345423;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+  z-index: 5;
+}
+
+.neo_infographic_column_2 {
+  flex: 55%;
+  background: #557446;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.neo_infographic_column_2 picture,
+.neo_infographic_column_2 img {
+  object-fit: contain;
+  height: 150px;
+}
+
+@media (min-width: 1250px) {
+
+  .neo_infographic_column_2 picture,
+  .neo_infographic_column_2 img {
+    height: 200px;
+  }
+}
+
+.neo_infographic_column_2>div>div:first-child {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid #ffffff;
+}
+
+.neo_infographic_column_2>div>div:first-child>div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.neo_infographic_column_2>div>div:first-child>div>span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 74px;
+  line-height: 80px;
+}
+
+.neo_infographic_column_2>div>div:first-child>div>div>span:first-child {
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 36px;
+  color: #fff;
+  display: block;
+}
+
+.neo_infographic_column_2>div>div:first-child>div>div>span:last-child {
+  font-size: 12.3px;
+  line-height: 20px;
+  color: #213914;
+}
+
+.neo_infographic_column_2>div>div:last-child>span:first-child {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 52px;
+  color: #213914;
+  display: block;
+}
+
+.neo_infographic_column_2>div>div:last-child>span:last-child {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.neo_infographic_column_2::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #557446;
+  position: absolute;
+  bottom: -20px;
+  right: 20%;
+  z-index: 3;
+}
+
+.neo_infographic_column_3 {
+  flex: 27%;
+  background: gray;
+  position: relative;
+  padding: 0 !important;
+}
+
+.neo_infographic_column_3>div:first-child {
+  position: absolute;
+  background: #213914;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.neo_infographic_column_3>div:last-child {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.neo_infographic_column_3>div:last-child>div {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.neo_infographic_column_3>div:last-child>div span {
+  text-shadow: 0px 0px 5px #99ff00;
+  color: #99ff00;
+}
+
+.neo_infographic_column_3>div:last-child>span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14.8px;
+  line-height: 20px;
+  display: block;
+  text-align: center;
+}
+
+.neo_infographic_column_3>div:last-child>span:nth-of-type(2) {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+}
+
+.neo_infographic_column_3>div:last-child>span:nth-of-type(3) {
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 36px;
+}
+
+.neo_infographic_column_3 img,
+.neo_infographic_column_3 picture {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.neo_infographic_column_4 {
+  flex: 27%;
+  background: #94ac87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.neo_infographic_column_4>span:first-child {
+  margin-bottom: 28px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.neo_infographic_column_4>span:nth-of-type(2) {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 36px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.neo_infographic_column_4>span:last-child {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #213914;
+}
+
+.neo_infographic_column_5 {
+  flex: 46%;
+  background: #7f9972;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.neo_infographic_column_5>div>div:first-child {
+  border-bottom: 0.5px solid #FFFFFF;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.neo_infographic_column_5>div>div:first-child span:first-child {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 52px;
+  color: #213914;
+}
+
+.neo_infographic_column_5>div>div:first-child span:last-child {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  color: #213914;
+}
+
+.neo_infographic_column_5>div>div:last-child {
+  display: flex;
+  gap: 5px;
+}
+
+.neo_infographic_column_5>div>div:last-child>span {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 80px;
+  color: #ffffff;
+}
+
+.neo_infographic_column_5>div>div:last-child>div>span {
+  color: #fff;
+}
+
+.neo_infographic_column_5>div>div:last-child>div>span:first-child {
+  margin-top: 5px;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  display: block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+  width: 80px;
+}
+
+.neo_infographic_column_5>div>div:last-child>div>div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.neo_infographic_column_5>div>div:last-child>div>div span {
+  text-shadow: 0px 0px 5px #99ff00;
+  color: #99ff00;
+  font-size: 15px;
+}
+
+.neo_infographic_column_5 img, .neo_infographic_column_5 picture {
+  height: 150px;
+  object-fit: contain;
+}
+
+@media (min-width: 1250px) {
+  .neo_infographic_column_5 img, .neo_infographic_column_5 picture {
+    height: 200px;
+  }
+}
+
+.neo_infographic_column_5::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #7f9972;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+}

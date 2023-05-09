@@ -1,0 +1,96 @@
+.neo_hero_distributors {
+  height: 160px;
+  background: gray;
+}
+
+.neo_hero_distributors>picture,
+.neo_hero_distributors>img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.neo_hero_distributors>picture>img,
+.neo_hero_distributors>img>img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 1080px) {
+  .neo_hero_distributors {
+    height: 355px;
+  }
+
+  .neo_hero_distributors>picture,
+  .neo_hero_distributors>img {
+    height: 355px;
+  }
+
+  .neo_hero_distributors>picture>img,
+  .neo_hero_distributors>img {
+    height: 355px;
+  }
+}
+
+.neo_distributors_itern_page {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 0;
+}
+
+@media (min-width: 1080px) {
+  .neo_distributors_itern_page {
+    margin-top: -88px;
+  }
+}
+
+.neo_distributors_itern_page aside {
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .neo_distributors_itern_page aside {
+    width: 300px;
+    display: block;
+  }
+}
+
+.neo_distributors_itern_page aside h2 {
+  background: #26bf64;
+  height: 88px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.neo_distributors_itern_page aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  padding: 16px;
+  background: #f1f1f1;
+}
+
+.neo_distributors_itern_page aside ul li a {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: black;
+}
+
+.neo_distributors_itern_page aside ul li a.active {
+  color: #26bf64;
+  text-decoration: underline;
+}
+
+.neo_distributors_itern_page>div {
+  flex: 100%;
+  background: white;
+  padding: 26px;
+}

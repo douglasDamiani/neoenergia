@@ -1,0 +1,21 @@
+.neo_hero_institute_banner {
+  height: 160px;
+}
+
+.neo_hero_institute_banner img,
+.neo_hero_institute_banner picture {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  background: gray;
+}
+
+@media (min-width: 1080px) {
+
+  .neo_hero_institute_banner,
+  .neo_hero_institute_banner img,
+  .neo_hero_institute_banner picture {
+    height: 300px;
+  }
+}

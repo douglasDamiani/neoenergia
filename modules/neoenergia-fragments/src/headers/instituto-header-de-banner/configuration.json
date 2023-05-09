@@ -1,0 +1,19 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "urlBanner",
+          "label": "Button Text",
+          "description": "button-text",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        }
+      ]
+    }
+  ]
+}

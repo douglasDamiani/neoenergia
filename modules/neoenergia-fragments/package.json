@@ -1,0 +1,37 @@
+{
+  "name": "neoenergia-fragments",
+  "description": "Liferay Fragments project",
+  "version": "1.0.0",
+
+  "keywords": [
+    "liferay",
+    "liferay-fragments"
+  ],
+
+  "scripts": {
+    "add-collection": "yo liferay-fragments:collection",
+    "add-fragment": "yo liferay-fragments:fragment",
+    "add-fragment-composition": "yo liferay-fragments:fragment-composition",
+    "add-page-template": "yo liferay-fragments:page-template",
+    "build": "yo liferay-fragments:build",
+    "compress": "yo liferay-fragments:compress",
+    "export": "yo liferay-fragments:export",
+    "import": "yo liferay-fragments:import",
+    "import:watch": "yo liferay-fragments:import --watch",
+    "preview": "yo liferay-fragments:preview"
+  },
+
+  "engines": {
+    "node": "^16.0.0",
+    "yarn": "^1.22.5"
+  },
+
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+
+  "devDependencies": {
+    "generator-liferay-fragments": "2.0.2"
+  }
+}

@@ -1,0 +1,15 @@
+.neo_hero_video img,
+.neo_hero_video picture,
+.neo_hero_video video {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (min-width: 1080px) {
+  .neo_hero_video img,
+  .neo_hero_video picture,
+  .neo_hero_video video {
+    height: 640px;
+  }
+}
