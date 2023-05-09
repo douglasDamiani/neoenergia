@@ -1,0 +1,137 @@
+.neo_swiper_banner{
+  overflow-x: hidden;
+	position: relative;
+}
+
+.neo_banner_slide_item {
+  flex-shrink: 0;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.neo_banner_slide_content {
+  position: relative;
+}
+
+.neo_banner_slide_item img {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+}
+
+.neo_banner_slide_description {
+  background: linear-gradient(to top, #000, transparent);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  color: white;
+  width: 100%;
+  padding: 56px;
+}
+
+.neo_banner_slide_description h3 {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  position: relative;
+}
+
+.neo_banner_slide_description p {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+	margin: 0
+}
+
+
+.swiper-pagination{
+   display: block;
+	 position: relative;
+	 margin: 20px auto;
+}
+
+.swiper-pagination > span{
+	border-radius: 0px;
+	background-color: #41493d;
+  color: #fff;
+  font-size: 20px;
+  height: 4px;
+  width: 24px;
+  margin: 0 4px;
+}
+
+.swiper-pagination > span:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+
+
+.slide-control-button.active {
+  background-color: #41493d;
+}
+
+.neo_banner_slide_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  padding: 4px 16px;
+  margin-top: 90px;
+  gap: 8px;
+  border: none;
+  bottom: 0;
+
+  width: 155px;
+  height: 40px;
+
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.neo_banner_slide_btn:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .neo_banner_slide_description {
+    padding: 16px;
+  }
+
+  .neo_banner_slide_description h3 {
+    font-size: 18px;
+    line-height: 28px;
+    width: 406px;
+  }
+
+  .neo_banner_slide_description p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .banner-slide-item img {
+    height: 164px;
+  }
+
+  .neo_banner_slide_btn {
+    width: 112px;
+    height: 32px;
+    margin-top: 24px;
+
+    padding: 4px 16px;
+    gap: 0;
+  }
+
+  .neo_banner_slide_btn p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 24px;
+  }
+}

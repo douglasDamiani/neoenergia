@@ -1,0 +1,25 @@
+<div class="neo_swiper_banner">
+  <div class="swiper-wrapper">
+		[#list 0..configuration.numberOfSlides-1 as item]
+    <div tabindex="0" class="neo_banner_slide_item swiper-slide" data-slide="item" data-index="${item}">
+        <div class="neo_banner_slide_content">
+          <img data-lfr-editable-id="image-id-${item}" data-lfr-editable-type="image" src="" class="img-fluid" alt="" />
+
+          <div class="neo_banner_slide_description">
+            <h3 data-lfr-editable-id="title-id-${item}" data-lfr-editable-type="text">Texto Editavel</h3>
+            <p data-lfr-editable-id="text-id-${item}" data-lfr-editable-type="text">Texto editável</p>
+
+            <button class="neo_banner_slide_btn">
+              <p data-lfr-editable-id="text-btn-id-${item}" data-lfr-editable-type="text">Saiba mais</p>
+              <span class="material-symbols-outlined"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+		[/#list]
+  </div>
+
+  <div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
