@@ -4,5 +4,6 @@
   "htmlPath": "index.html",
   "jsPath": "main.js",
   "name": "Slider de conteudo em destaque",
-  "type": "component"
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }

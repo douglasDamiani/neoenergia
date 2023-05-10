@@ -3,12 +3,20 @@
     {
       "fields": [
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "dataType": "int",
+          "label": "Number of Slides Content",
+          "name": "numberOfSlidesContent",
+          "type": "text",
+					"typeOptions": {
+						"validation": {
+							"min": 4,
+							"type": "number"
+						}
+					},
+					"defaultValue": "4"
         }
       ]
     }
-  ]
+]
 }
+
