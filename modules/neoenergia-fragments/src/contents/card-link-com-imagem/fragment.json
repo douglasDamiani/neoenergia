@@ -4,5 +4,6 @@
   "htmlPath": "index.html",
   "jsPath": "main.js",
   "name": "Card link com imagem",
-  "type": "component"
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }
