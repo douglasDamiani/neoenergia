@@ -1,7 +1,46 @@
-.conteudo-em-destaque-sem-margem {
-  color: inherit;
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+.neo_highlight_content_no_margin {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 1080px) {
+  .neo_highlight_content_no_margin {
+    flex-direction: row;
+  }
+}
+
+.neo_highlight_content_no_margin>img,
+.neo_highlight_content_no_margin>picture {
+  object-fit: cover;
+  width: 100%;
+  background: gray;
+  height: 250px;
+}
+
+.neo_highlight_content_no_margin>picture img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+@media (min-width: 1080px) {
+
+  .neo_highlight_content_no_margin>img,
+  .neo_highlight_content_no_margin>picture {
+    min-height: 200px;
+    width: 40%;
+  }
+}
+
+.neo_highlight_content_no_margin>div {
+  background: #fff;
+  padding: 30px 16px;
+}
+
+@media (min-width: 1080px) {
+  .neo_highlight_content_no_margin>div {
+    padding: 40px 56px;
+    width: 60%;
+  }
 }

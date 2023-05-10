@@ -1,0 +1,25 @@
+.neo_grid_related_links>h2{
+  margin-bottom: 24px;
+}
+
+.neo_grid_related_links>div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.neo_grid_related_links>div>div {
+  width: calc(100%/2 - 24px);
+}
+
+@media (min-width: 768px) {
+  .neo_grid_related_links>div>div {
+    width: calc(100%/3 - 24px);
+  }
+}
+
+@media (min-width: 1080px){
+  .neo_grid_related_links>h2{
+    margin-bottom: 56px;
+  }
+}

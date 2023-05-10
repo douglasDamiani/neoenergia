@@ -1,7 +1,21 @@
-<div class="faixa-de-conteudo-verticais-largura-completa">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Faixa de conteudo verticais largura completa
-    </lfr-editable>
-  </h1>
-</div>
+<section class="neo_stripe_vertical_full_lateral_box">
+  <div class="container-fluid container-fluid-max-xl">
+    <div class="neo_stripe_vertical_full_lateral">
+      <div>
+        <h2 data-lfr-editable-id="title" data-lfr-editable-type="text">
+          Titulo editavel
+        </h2>
+        <div data-lfr-editable-id="text" data-lfr-editable-type="rich-text">
+          Texto editavel
+        </div>
+      </div>
+      <div>
+        [#list 1..6 as item]
+        <div>
+          <lfr-drop-zone data-lfr-drop-zone-id="dropzone-${item}"></lfr-drop-zone>
+        </div>
+        [/#list]
+      </div>
+    </div>
+  </div>
+</section>

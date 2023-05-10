@@ -3,7 +3,6 @@
   "configurationPath": "configuration.json",
   "htmlPath": "index.html",
   "jsPath": "main.js",
-  "name": "Faixa de conteudo verticais largura completa",
-  "type": "component",
-  "thumbnailPath": "thumbnail.png"
+  "name": "Grid de links relacionados",
+  "type": "component"
 }

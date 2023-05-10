@@ -3,6 +3,7 @@
   "configurationPath": "configuration.json",
   "htmlPath": "index.html",
   "jsPath": "main.js",
-  "name": "Institucional",
-  "type": "component"
+  "name": "Card link com imagem",
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }

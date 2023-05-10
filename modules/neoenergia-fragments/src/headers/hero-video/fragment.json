@@ -4,5 +4,6 @@
   "htmlPath": "index.html",
   "jsPath": "main.js",
   "name": "Hero de vídeo",
-  "type": "component"
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }

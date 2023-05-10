@@ -3,7 +3,7 @@
   "configurationPath": "configuration.json",
   "htmlPath": "index.html",
   "jsPath": "main.js",
-  "name": "Faixa de conteudo verticais largura completa",
+  "name": "Institucional - Header",
   "type": "component",
   "thumbnailPath": "thumbnail.png"
 }
