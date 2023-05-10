@@ -1,7 +1,102 @@
-.faixa-de-conteudo-grande {
-  color: inherit;
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+.neo_faixa_grande_container {
+  position: relative;
+  width: 100%;
+  height: 35.375rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .neo_faixa_grande_container {
+    height: 487px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .neo_faixa_grande_container {
+    height: 406px;
+  }
+}
+
+.neo_faixa_grande_container__image-backgorund {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.neo_faixa_grande_container__overlay {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24.6875rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(33, 57, 20, 0.85),
+    rgba(33, 57, 20, 0.85)
+  );
+}
+
+@media screen and (max-width: 1024px) {
+  .neo_faixa_grande_container__overlay {
+    gap: 27px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .neo_faixa_grande_container__overlay {
+    gap: 18px;
+  }
+}
+
+.neo_faixa_grande_container__overlay p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  width: 28.1875rem;
+
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .neo_faixa_grande_container__overlay p {
+    font-size: 22px;
+    line-height: 32px;
+    width: 412px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .neo_faixa_grande_container__overlay p {
+    font-size: 18px;
+    line-height: 27px;
+    width: 287px;
+  }
+}
+
+.neo_faixa_grande_container__img-container {
+  display: flex;
+  gap: 40px;
+}
+
+.neo_faixa_grande_container__img {
+  width: 8.375rem;
+  height: 9.875rem;
+}
+
+.neo_faixa_grande_container__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .neo_faixa_grande_container__img {
+    width: 7rem;
+    height: 7.9375rem;
+  }
 }
