@@ -1,7 +1,22 @@
-<div class="listagem-de-faixa-de-conteudos-verticais">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Listagem de faixa de conteudos verticais
-    </lfr-editable>
-  </h1>
-</div>
+<section class="container-fluid container-fluid-max-xl">
+  <div class="neo_list_stripe_vertical_full_lateral">
+    <div>
+      <div>
+        <h2 data-lfr-editable-id="title" data-lfr-editable-type="text">
+          Titulo editavel
+        </h2>
+        <a data-lfr-editable-id="link" data-lfr-editable-type="link">Link editavel</a>
+      </div>
+      <div data-lfr-editable-id="text" data-lfr-editable-type="rich-text">
+        Texto editavel
+      </div>
+    </div>
+    <div>
+      [#list 1..configuration.cardsQuantity as item]
+      <div>
+        <lfr-drop-zone data-lfr-drop-zone-id="dropzone-${item}"></lfr-drop-zone>
+      </div>
+      [/#list]
+    </div>
+  </div>
+</section>

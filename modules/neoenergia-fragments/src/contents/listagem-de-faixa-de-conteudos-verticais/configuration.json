@@ -3,10 +3,19 @@
     {
       "fields": [
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "dataType": "int",
+          "label": "Quantidade de cards",
+          "name": "cardsQuantity",
+          "type": "text",
+          "defaultValue": "6",
+          "typeOptions": {
+            "validation": {
+              "errorMessage": "Insira um número entre 1 e 20.",
+              "type": "number",
+              "min": 5,
+              "max": 20
+            }
+          }
         }
       ]
     }
