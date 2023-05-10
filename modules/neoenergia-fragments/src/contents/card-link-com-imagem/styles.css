@@ -3,6 +3,7 @@
   position: relative;
   display: block;
   background: gray;
+  overflow: hidden;
 }
 
 .neo_card_link_layer {
@@ -20,6 +21,14 @@
   width: 100%;
   height: 400px;
   object-fit: cover;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+}
+
+.neo_card_link:hover .neo_card_link_img {
+  transform: scale(1.3);
 }
 
 .neo_card_link_text {
