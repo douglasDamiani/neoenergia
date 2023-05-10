@@ -1,0 +1,19 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "cardURL",
+          "label": "Url de redirectionamento",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        }
+      ]
+    }
+  ]
+}

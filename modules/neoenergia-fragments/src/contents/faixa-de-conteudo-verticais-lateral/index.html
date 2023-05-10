@@ -1,7 +1,15 @@
-<div class="faixa-de-conteudo-verticais-lateral">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Faixa de conteudo verticais lateral
-    </lfr-editable>
-  </h1>
-</div>
+<section class="container-fluid container-fluid-max-xl">
+  <div class="neo_stripe_vertical_lateral">
+    <div>
+      <h2>Titulo editável</h2>
+      <p>Texto editável</p>
+    </div>
+    <div>
+      [#list 1..3 as item]
+      <div>
+        <lfr-drop-zone data-lfr-drop-zone-id="dropzone-${item}"></lfr-drop-zone>
+      </div>
+      [/#list]
+    </div>
+  </div>
+</section>
