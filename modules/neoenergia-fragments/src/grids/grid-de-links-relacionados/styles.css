@@ -1,76 +1,25 @@
-.card-container-link {
-  position: relative;
-  height: 260px;
+.neo_grid_related_links>h2{
+  margin-bottom: 24px;
+}
+
+.neo_grid_related_links>div {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
-.card-container-link .card-text i {
-  color: white;
-  font-weight: 700;
-  font-size: 28px;
-  padding-bottom: 1.5rem;
+.neo_grid_related_links>div>div {
+  width: calc(100%/2 - 24px);
 }
 
-div.card-text .card-title {
-  color: white;
-  font-weight: 700;
-  font-size: 28px;
-  margin: 0;
-}
-
-div.card-text {
-  padding-left: 2rem;
-}
-
-@media (max-width: 768px) {
-  .card-container-link {
-    width: 328px;
-    height: 200px;
+@media (min-width: 768px) {
+  .neo_grid_related_links>div>div {
+    width: calc(100%/3 - 24px);
   }
 }
 
-.card-container-link img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.card-container-link .card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2.0469rem;
-  position: relative;
-  z-index: 12;
-}
-
-.card-container-link .card-text h3 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 2.25rem;
-  color: #fff;
-}
-
-.card-container-link .overlay {
-  position: absolute;
-  background-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0.8;
-  z-index: 11;
+@media (min-width: 1080px){
+  .neo_grid_related_links>h2{
+    margin-bottom: 56px;
+  }
 }

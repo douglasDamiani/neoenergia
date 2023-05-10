@@ -3,15 +3,18 @@
     {
       "fields": [
         {
-          "name": "urlLink",
-          "label": "Link do botão",
-          "description": "Insira o link do botão",
+          "dataType": "int",
+          "label": "Quantidade de cards",
+          "name": "numberCards",
           "type": "text",
           "typeOptions": {
-            "placeholder": "https://"
+            "validation": {
+              "min": 3,
+              "max": 21,
+              "type": "number"
+            }
           },
-          "dataType": "string",
-          "defaultValue": ""
+          "defaultValue": "3"
         }
       ]
     }

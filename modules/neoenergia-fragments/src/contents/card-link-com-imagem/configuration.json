@@ -3,6 +3,31 @@
     {
       "fields": [
         {
+          "name": "cardSize",
+          "label": "Tamanho do card",
+          "description": "",
+          "type": "select",
+          "dataType": "string",
+          "typeOptions": {
+            "validValues": [
+              {
+                "value": "pequeno"
+              },
+              {
+                "value": "grande"
+              }
+            ]
+          },
+          "defaultValue": "pequeno"
+        },
+        {
+          "name": "isExternalLink",
+          "label": "É um link externo?",
+          "description": "",
+          "type": "checkbox",
+          "defaultValue": false
+        },
+        {
           "name": "cardURL",
           "label": "Url de redirectionamento",
           "description": "",
