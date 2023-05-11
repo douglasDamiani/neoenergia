@@ -1,7 +1,115 @@
-.timeline-de-historico {
-  color: inherit;
+.neo-timeline {
+  height: 654px;
+  position: relative;
+  display: flex;
+}
+.neo-timeline__images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.neo-timeline__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+.neo-timeline__image.active {
+  display: block;
+}
+.neo-timeline__selector-arrow {
+  position: absolute;
+  display: flex;
+  top: 120px;
+  width: 1300px;
+  z-index: 1;
+  left: 50%;
+  margin-left: -650px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.neo-timeline__selector-next {
+  margin: 0 0 0 auto;
+}
+.neo-timeline__content {
+  position: absolute;
+  width: 590px;
+  top: 120px;
+  left: 130px;
+  display: flex;
+  flex-direction: column;
+}
+.neo-timeline__content h3 {
+  font-size: 24px;
+  margin: 0 0 22px 0;
+  color: #ffffff;
+}
+.neo-timeline__content p {
+  margin: 0;
+  color: #ffffff;
+}
+.neo-timeline__mask {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background-blend-mode: multiply;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.neo-timeline__selector-dates {
+  width: 95%;
+  max-width: 1300px;
+  display: flex;
+  margin: auto auto 50px auto;
+  z-index: 1;
+  color: #ffffff;
+}
+.neo-timeline__selector-date {
+  margin: auto auto 0 auto;
   font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+.neo-timeline__selector-date:last-child {
+  margin-right: 0;
+}
+.neo-timeline__selector-date:first-child {
+  margin-left: 0;
+}
+.neo-timeline__selector-date.active {
+  font-size: 72px;
+}
+.neo-timeline__content {
+  display: none;
+  z-index: 1;
+}
+.neo-timeline__content.active {
+  display: flex;
+}
+
+@media (max-width: 1300px) {
+  .neo-timeline__selector-arrow {
+    width: 95%;
+    left: 2.5%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 900px) {
+  .neo-timeline__selector-date {
+    display: none;
+  }
+  .neo-timeline__selector-date.active {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .neo-timeline__content {
+    width: 80%;
+    left: 10%;
+  }
 }
