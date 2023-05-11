@@ -1,4 +1,4 @@
-.neo_grid_related_links>h2{
+.neo_grid_related_links>h2 {
   margin-bottom: 24px;
 }
 
@@ -18,8 +18,8 @@
   }
 }
 
-@media (min-width: 1080px){
-  .neo_grid_related_links>h2{
+@media (min-width: 1080px) {
+  .neo_grid_related_links>h2 {
     margin-bottom: 56px;
   }
 }
