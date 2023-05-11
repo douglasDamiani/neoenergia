@@ -3,10 +3,18 @@
     {
       "fields": [
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "dataType": "int",
+          "label": "Quantidade de logos",
+          "name": "numberLogos",
+          "type": "text",
+          "typeOptions": {
+            "validation": {
+              "min": 7,
+              "max": 14,
+              "type": "number"
+            }
+          },
+          "defaultValue": "7"
         }
       ]
     }

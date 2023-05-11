@@ -1,7 +1,24 @@
-<div class="grid-de-logos">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Grid de logos
-    </lfr-editable>
-  </h1>
-</div>
+<section class="container-fluid container-fluid-max-xl">
+  <div class="neo_grid_logos__text">
+    <h2
+      data-lfr-editable-id="neo-grid-logos-title"
+      data-lfr-editable-type="text"
+    >
+      Título editável
+    </h2>
+    <p data-lfr-editable-id="neo-grid-logos-text" data-lfr-editable-type="text">
+      Texto editável
+    </p>
+  </div>
+  <div class="neo_logos">
+    [#list 1..configuration.numberLogos as logo]
+    <div>
+      <img
+        data-lfr-editable-id="neo-img-${logo}"
+        data-lfr-editable-type="image"
+        alt="Placeholder"
+      />
+    </div>
+    [/#list]
+  </div>
+</section>

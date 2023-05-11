@@ -1,7 +1,36 @@
-.grid-de-logos {
-  color: inherit;
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+.neo_grid_logos__text {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: #3a3735;
+  padding: 0 2% 5% 2%;
+}
+
+.neo_logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.neo_logos > div {
+  width: calc(100% / 2 - 20px);
+}
+
+@media (min-width: 768px) {
+  .neo_logos > div {
+    width: calc(100% / 7 - 20px);
+  }
+}
+
+@media (min-width: 1080px) {
+  .neo_logos > div {
+    width: calc(100% / 7 - 20px);
+  }
+}
+
+.neo_logos > div picture,
+.neo_logos > div img {
+  height: 80px;
+  width: 100%;
+  object-fit: contain;
 }
