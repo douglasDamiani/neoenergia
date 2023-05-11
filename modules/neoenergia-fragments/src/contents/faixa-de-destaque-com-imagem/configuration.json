@@ -7,6 +7,17 @@
           "label": "text-color",
           "name": "textColor",
           "type": "colorPalette"
+        },
+        {
+          "name": "urlLinkFaixaDestaque",
+          "label": "Link do botão",
+          "description": "Insira o link do botão",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
         }
       ]
     }
