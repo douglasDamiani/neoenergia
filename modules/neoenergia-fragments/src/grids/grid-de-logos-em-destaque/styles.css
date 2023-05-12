@@ -1,7 +1,18 @@
-.grid-de-logos-em-destaque {
-  color: inherit;
+.neo-grid-de-logos-em-destaque {
+  border: 1px solid #000000;
+  padding: 24px;
+  width: 280px;
+}
+.neo-grid-de-logos-em-destaque__image {
+  margin-bottom: 28px;
+}
+.neo-grid-de-logos-em-destaque__title{
+  margin-bottom: 16px;
+  font-weight: 400;
   font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+}
+
+.neo-grid-de-logos-em-destaque__text{
+  font-weight: 400;
+  font-size: 14px;
 }
