@@ -4,11 +4,51 @@ const elMenuItem = fragmentElement.querySelectorAll('.menu__link')
 const elSearch = fragmentElement.querySelector('.header__search')
 const elSearchBar = fragmentElement.querySelector('.search-bar')
 
-elOpenMenu.addEventListener('click',function(){
+
+const populateQuotas = (documentXML) =>{
+    const infos = ["Date", "Last_Price", "Time", "Difference_Percent"];
+
+    infos.forEach(info =>{
+        const data = fragmentElement.querySelector(`#${info.toLocaleLowerCase()}`);
+        const dataXML = documentXML.getElementsByTagName(info)[0];
+
+        data.innerText = dataXML.innerHTML;
+    })
+}
+
+const getQuotas = () => {
+    fetch("https://ri.enfoque.com.br/RIWeb/wsQuotes/cotacoes.asmx/Quotes?login=Neoenergia&senha=NEOE", {
+        "headers": {
+            "accept": "*/*",
+            "accept-language": "en-US,en;q=0.9",
+            "sec-ch-ua": "\"Google Chrome\";v=\"113\", \"Chromium\";v=\"113\", \"Not-A.Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?1",
+            "sec-ch-ua-platform": "\"Android\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site"
+        },
+        "referrer": "https://www.neoenergia.com/",
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "body": null,
+        "method": "GET",
+        "mode": "cors",
+        "credentials": "omit"
+    }).then(response => response.text()).then(data => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data, "application/xml");
+        populateQuotas(xml);
+    })
+        .catch(console.error);
+}
+
+getQuotas();
+
+elOpenMenu.addEventListener('click', function () {
     elHeader.classList.toggle('open')
-    if(elOpenMenu.innerHTML === 'close'){
+    if (elOpenMenu.innerHTML === 'close') {
         elOpenMenu.innerHTML = 'menu';
-        return ;
+        return;
     }
     elOpenMenu.innerHTML = 'close';
 
@@ -16,12 +56,12 @@ elOpenMenu.addEventListener('click',function(){
 
 
 for (let i = 0; i < elMenuItem.length; i++) {
-    elMenuItem[i].addEventListener('click',function(event){
+    elMenuItem[i].addEventListener('click', function (event) {
         event.target.parentElement.classList.toggle('open')
     })
-    
+
 }
 
-elSearch.addEventListener('click',function(){
+elSearch.addEventListener('click', function () {
     elSearchBar.classList.toggle('open')
 })
