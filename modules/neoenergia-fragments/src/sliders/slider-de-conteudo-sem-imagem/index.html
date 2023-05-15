@@ -1,7 +1,35 @@
-<div class="slider-de-conteudo-sem-imagem">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Slider de conteudo sem imagem
-    </lfr-editable>
-  </h1>
+<section class="container-fluid container-fluid-max-xl">
+  <div class="neo_swiper_slider_conteudo">
+  <div class="swiper-wrapper">
+		[#list 0..configuration.numberOfSlidesContent-1 as item]
+    <div
+      tabindex="0"
+      class="neo_slider_conteudo_sem_imagem swiper-slide"
+      data-slide="item"
+      data-index="${item}"
+    >
+      <div class="neo_slider_conteudo_sem_imagem__container">
+        <div class="neo_slider_conteudo_sem_imagem__title-city">
+          <h3
+            data-lfr-editable-id="title-city-id-${item}"
+            data-lfr-editable-type="text"
+          >
+            Guanabara
+          </h3>
+        </div>
+        <div class="neo_slider_conteudo_sem_imagem__description">
+          <p
+            data-lfr-editable-id="description-id-${item}"
+            data-lfr-editable-type="rich-text"
+          >
+            Rio de Janeiro (RJ)
+          </p>
+        </div>
+      </div>
+    </div>
+    [/#list]
+ </div>
+ <div class="swiper-pagination"></div>
 </div>
+
+</section>

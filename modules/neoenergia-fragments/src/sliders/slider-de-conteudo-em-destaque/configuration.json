@@ -4,19 +4,18 @@
       "fields": [
         {
           "dataType": "int",
-          "label": "Number of Slides Content",
-          "name": "numberOfSlidesContent",
+          "label": "Quantidade de conteúdo em destaque",
+          "name": "quantityCardHighlight",
           "type": "text",
-					"typeOptions": {
-						"validation": {
-							"min": 4,
-							"type": "number"
-						}
-					},
-					"defaultValue": "4"
+          "typeOptions": {
+            "validation": {
+              "min": 1,
+              "type": "number"
+            }
+          },
+          "defaultValue": "4"
         }
       ]
     }
-]
+  ]
 }
-

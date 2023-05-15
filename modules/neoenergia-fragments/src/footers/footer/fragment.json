@@ -3,7 +3,6 @@
   "configurationPath": "configuration.json",
   "htmlPath": "index.html",
   "jsPath": "main.js",
-  "name": "Slider de conteudo sem imagem",
-  "type": "component",
-  "thumbnailPath": "thumbnail.png"
+  "name": "Footer",
+  "type": "component"
 }

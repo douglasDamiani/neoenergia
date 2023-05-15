@@ -30,6 +30,7 @@
   .neo_highlight_content_no_margin>picture {
     min-height: 200px;
     width: 40%;
+    height: 100%;
   }
 }
 
