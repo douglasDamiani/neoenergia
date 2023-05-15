@@ -6,6 +6,12 @@ var swiper = new Swiper('.neo_slider_highlight_content_instance', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
-  slidesPerView: 2.1,
+  slidesPerView: 1.1,
   spaceBetween: 24,
+  breakpoints: {
+    768: {
+      slidesPerView: 2.2,
+      spaceBetween: 20
+    }
+  }
 });
