@@ -56,6 +56,11 @@
   flex-direction: column;
 }
 
+.neo_slider_highlight_content_item>div>div {
+  max-height: 105px;
+  overflow-y: hidden;
+}
+
 .neo_slider_highlight_content_item>div>a {
   margin: auto 0 0 0;
   display: flex;
