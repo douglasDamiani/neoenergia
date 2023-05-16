@@ -49,6 +49,8 @@
   display:flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footer__bottom>div a, .footer__bottom>div div{
@@ -85,8 +87,9 @@
   flex-direction: column;
 }
 
-@media (max-width: 1220px) {
-  .footer__mid, .footer__logo, .footer__bottom {
-    display: none !important;
+
+@media (min-width: 768px){
+  .footer__bottom>div{
+    flex-direction: row;
   }
 }
