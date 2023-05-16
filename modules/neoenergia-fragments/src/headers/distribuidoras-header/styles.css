@@ -1,0 +1,100 @@
+.neo__distribution_header {
+  background: #213914;
+  padding: 16px;
+}
+
+.neo__distribution_header>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.neo__distribution_header>div>div {
+  display: flex;
+  align-items: center;
+}
+
+.neo__distribution_header>div>div:first-child {
+  gap: 100px;
+}
+
+.neo__distribution_header>div>div:last-child {
+  gap: 50px;
+}
+
+.neo__distribution_header_distribution_list {
+  position: relative;
+}
+
+.neo__distribution_header_distribution_list>button {
+  display: flex;
+  color: #fff;
+  text-transform: uppercase;
+  gap: 5px;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  font-weight: 400;
+}
+
+
+.neo__distribution_header_distribution_list>ul::before {
+  content: '';
+  height: 29px;
+  width: 100%;
+  background: #213914;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.neo__distribution_header_distribution_list>ul {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 200px;
+  padding: 40px 20px 20px 20px;
+  list-style: none;
+  margin: 0;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  background: #00402A;
+}
+
+.neo__distribution_header_distribution_list>ul a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.neo__distribution_header_distribution_list:hover>ul {
+  display: flex;
+}
+
+.neo__distribution_header_social_list {
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.neo__distribution_header_link {
+  height: 40px;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #5C881A;
+}
+
+.neo__distribution_header_link span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
