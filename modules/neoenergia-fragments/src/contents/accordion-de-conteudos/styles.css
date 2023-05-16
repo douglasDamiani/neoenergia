@@ -32,6 +32,6 @@
 }
 
 .neo_accordion>div.show{
-  max-height: 1000px;
+  max-height: 10000px;
   padding: 20px 0;
 }
