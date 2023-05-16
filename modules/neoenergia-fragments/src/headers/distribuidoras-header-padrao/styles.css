@@ -84,9 +84,9 @@
   color: black;
 }
 
-.neo_distributors_itern_page aside ul li a.active {
-  color: #26bf64;
-  text-decoration: underline;
+.neo_distributors_itern_page aside ul li.active a span {
+  color: #26bf64 !important;
+  text-decoration: underline !important;
 }
 
 .neo_distributors_itern_page>div {
