@@ -14,6 +14,15 @@
   align-items: center;
   height: 24.375rem;
 }
+.neo_swiper_slider_conteudo-title{
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.neo_swiper_slider_conteudo-text{
+  font-weight: 400;
+  font-size: 15px;
+}
 
 .neo_slider_conteudo_sem_imagem__title-city {
   height: 31px;
