@@ -1,11 +1,8 @@
-.header {
-  width: 100%;
-  height: 110px;
+.neo_header {
   display: flex;
   position: relative;
   flex-direction: column;
   background-color: #ffffff;
-  z-index: 5;
 }
 
 .header__logo {
@@ -14,23 +11,14 @@
 }
 
 .header__top-items {
-  width: 95%;
-  max-width: 1320px;
-  margin: 0 auto;
-  height: 60px;
   display: flex;
-  flex-direction: row;
-  z-index: 5;
+  align-items: center;
   background-color: #ffffff;
+  justify-content: space-between;
 }
 
 .header__top-score {
-  position: absolute;
-  top: 18px;
-  width: 100%;
-  text-align: center;
   display: flex;
-  z-index: 5;
 }
 
 .header__top-score ul {
@@ -47,6 +35,8 @@
   padding: 0px 16px;
   font-size: 12px;
   line-height: 12px;
+  display: flex;
+  gap: 15px;
 }
 
 .header__top-score ul li:last-child {
@@ -59,6 +49,44 @@
 
 .header__top-score ul li p span {
   color: #5C881A;
+}
+
+.header__top-score .negative {
+  color: red;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.header__top-score .negative::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid red;
+}
+
+
+.header__top-score .positive {
+  color: #5C881A;
+}
+
+.header__top-score .positive::after {
+  content: '';
+  display: block;
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #5C881A;
+}
+
+
+.header__actions {
+  display: flex;
+  gap: 15px;
 }
 
 .header__open-menu {
@@ -75,29 +103,39 @@
   cursor: pointer;
 }
 
-.header__search {
+.header__accessibility, .header__search {
   cursor: pointer;
-  margin: auto 0 auto 30px;
-}
-
-.header__accessibility {
-  cursor: pointer;
-  margin: auto 0 auto 30px;
 }
 
 .header__language {
   cursor: pointer;
-  margin: auto 0 auto auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.header__language .text-lang {
-  position: relative;
-  right: 4px;
-  top: -5px;
+.header__language>ul {
+  position: absolute;
+  top: 25px;
+  left: -10px;
+  width: 100px;
+  padding: 0;
+  background: white;
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.header__language:hover>ul {
+  display: flex;
 }
 
 @media (max-width: 1220px) {
-  .header {
+  .neo_header {
     margin-top: 22px;
     height: 50px;
   }
@@ -130,7 +168,7 @@
     margin-right: auto;
   }
 
-  .header .nav {
+  .neo_header .nav {
     height: calc(100% - 50px);
     position: absolute;
     top: -500px;
@@ -142,13 +180,13 @@
     height: auto;
   }
 
-  .header .nav .menu {
+  .neo_header .nav .menu {
     display: flex;
     flex-direction: column;
     flex: none;
   }
 
-  .header .nav .menu__item {
+  .neo_header .nav .menu__item {
     position: relative;
     flex-direction: column;
     width: 95%;
@@ -157,7 +195,7 @@
     border-bottom: 1px solid rgb(223, 223, 223);
   }
 
-  .header .nav .menu__item .menu__arrow-more {
+  .neo_header .nav .menu__item .menu__arrow-more {
     opacity: 1;
     visibility: visible;
     display: block;
@@ -166,7 +204,7 @@
     top: 15px;
   }
 
-  .header .nav .menu__item .menu__arrow-less {
+  .neo_header .nav .menu__item .menu__arrow-less {
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -175,21 +213,21 @@
     top: 15px;
   }
 
-  .header .nav .menu__item:hover {
+  .neo_header .nav .menu__item:hover {
     transition: none;
     border-bottom: 1px solid rgb(223, 223, 223);
   }
 
-  .header .nav .menu__item:hover>.submenu {
+  .neo_header .nav .menu__item:hover>.submenu {
     visibility: hidden;
     opacity: 0;
   }
 
-  .header .nav .menu__item.open {
+  .neo_header .nav .menu__item.open {
     height: auto;
   }
 
-  .header .nav .menu__item.open .menu__arrow-more {
+  .neo_header .nav .menu__item.open .menu__arrow-more {
     opacity: 0;
     visibility: hidden;
   }
@@ -306,12 +344,8 @@
 }
 
 .nav {
-  width: 95%;
-  max-width: 1320px;
   height: 50px;
-  margin: 0 auto;
   display: flex;
-  flex-direction: row;
   background-color: #ffffff;
 }
 

@@ -3,15 +3,22 @@ const elHeader = fragmentElement.querySelector('.header')
 const elMenuItem = fragmentElement.querySelectorAll('.menu__link')
 const elSearch = fragmentElement.querySelector('.header__search')
 const elSearchBar = fragmentElement.querySelector('.search-bar')
+const availableLanguages = fragmentElement.querySelectorAll(".header__language>ul>li");
 
-
-const populateQuotas = (documentXML) =>{
+const populateQuotas = (documentXML) => {
     const infos = ["Date", "Last_Price", "Time", "Difference_Percent"];
 
-    infos.forEach(info =>{
+    infos.forEach(info => {
         const data = fragmentElement.querySelector(`#${info.toLocaleLowerCase()}`);
         const dataXML = documentXML.getElementsByTagName(info)[0];
 
+        if (info === "Difference_Percent") {
+            if (dataXML.innerHTML.includes("-")){
+                data.classList.add("negative");
+            } else {
+                data.classList.add("positive");
+            }
+        }
         data.innerText = dataXML.innerHTML;
     })
 }
@@ -43,6 +50,22 @@ const getQuotas = () => {
 }
 
 getQuotas();
+
+availableLanguages.forEach(language => {
+    language.addEventListener('click', () => {
+        let url = Liferay.currentURL;
+
+        ['/pt/', '/en/', '/es/'].forEach(lang => {
+            if (url.includes(lang)) {
+                url = url.substring(4, url.length)
+            }
+        })
+
+        url = `/${language.innerText.toLowerCase()}/${url}`;
+
+        window.location.href = url;
+    });
+})
 
 elOpenMenu.addEventListener('click', function () {
     elHeader.classList.toggle('open')
