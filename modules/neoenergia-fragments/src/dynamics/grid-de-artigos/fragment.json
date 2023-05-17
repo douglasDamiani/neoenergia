@@ -4,5 +4,6 @@
   "htmlPath": "index.html",
   "jsPath": "main.js",
   "name": "Grid de artigos",
-  "type": "component"
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }

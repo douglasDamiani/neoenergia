@@ -1,7 +1,56 @@
-<div class="grid-de-artigos">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Grid de artigos
-    </lfr-editable>
-  </h1>
+[#macro getValues obj]
+[#assign image =
+obj.getDocument().getRootElement().elements()[0].selectSingleNode("dynamic-content").getText()?eval.url /]
+[#assign description =
+obj.getDocument().getRootElement().elements()[1].selectSingleNode("dynamic-content").getStringValue()?trim /]
+[#if description?length gt 100]
+[#assign description = description?substring(0,100) /]
+[/#if]
+[/#macro]
+
+
+<div class="neo_latest_news">
+  [#if collectionObjectList??]
+  [#list collectionObjectList as item]
+  [#if item?index gte 1]
+  [#break /]
+  [/#if]
+
+  [#attempt]
+  [@getValues obj=item /]
+  <a class="neo_latest_news_item" href="/w/${item.getUrlTitle()}">
+    <img src="${image}" />
+    <div></div>
+    <div>
+      <h3>${item.title}</h3>
+      <div>${description}</div>
+    </div>
+  </a>
+  [#recover]
+  [/#attempt]
+  [/#list]
+  [/#if]
+  <div>
+    [#if collectionObjectList??]
+    [#list collectionObjectList as item]
+    [#if item?index == 0]
+    [#continue /]
+    [/#if]
+    [#attempt]
+    [@getValues obj=item /]
+    <a class="neo_latest_news_item" href="/w/${item.getUrlTitle()}">
+      <img src="${image}" />
+      <div></div>
+      <div>
+        <h3>${item.title}</h3>
+        <div>
+          ${description}
+        </div>
+      </div>
+    </a>
+    [#recover]
+    [/#attempt]
+    [/#list]
+    [/#if]
+  </div>
 </div>

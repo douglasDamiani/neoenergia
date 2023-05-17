@@ -2,7 +2,8 @@
   <div class="container-fluid container-fluid-max-xl">
     <div>
       <div class="neo__distribution_header_distribution_list">
-        <button><span>Bahia</span><span class="material-symbols-outlined card-services__icon">arrow_drop_down</span></button>
+        <button><span>São Paulo</span><span
+            class="material-symbols-outlined card-services__icon">arrow_drop_down</span></button>
         <ul>
           <li><a href="">teste</a></li>
         </ul>
@@ -11,13 +12,24 @@
     </div>
     <div>
       <ul class="neo__distribution_header_social_list">
+        [#if configuration.urlTwitter != ""]
         <li><a title="Link do twitter" href=""><img src="[resources:twitter.svg]" alt="Icone do twitter"></a></li>
+        [/#if]
+        [#if configuration.urlFacebook != ""]
         <li><a title="Link do facebook" href=""><img src="[resources:face.svg]" alt="Icone do facebook"></a></li>
+        [/#if]
+        [#if configuration.urlInstagram != ""]
         <li><a title="Link do instagram" href=""><img src="[resources:insta.svg]" alt="Icone do instagram"></a></li>
+        [/#if]
+        [#if configuration.urlLinkedin != ""]
         <li><a title="Link do linkedin" href=""><img src="[resources:linkedin.svg]" alt="Icone do linkedin"></a></li>
+        [/#if]
+        [#if configuration.urlYoutube != ""]
         <li><a title="Link do youtube" href=""><img src="[resources:youtube.svg]" alt="Icone do youtube"></a></li>
+        [/#if]
       </ul>
-      <a class="neo__distribution_header_link" href=""><span class="material-symbols-outlined card-services__icon">login</span><span>Agência Virtual</span></a>
+      <a class="neo__distribution_header_link" href=""><span
+          class="material-symbols-outlined card-services__icon">login</span><span>Agência Virtual</span></a>
     </div>
   </div>
 </div>

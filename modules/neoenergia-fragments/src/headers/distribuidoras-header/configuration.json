@@ -1,0 +1,63 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "urlTwitter",
+          "label": "URL do Twitter",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "urlFacebook",
+          "label": "URL do Facebook",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "urlInstagram",
+          "label": "URL do Instagram",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "urlLinkedin",
+          "label": "URL do Linkedin",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "urlYoutube",
+          "label": "URL do Youtube",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
+        }
+      ]
+    }
+  ]
+}
