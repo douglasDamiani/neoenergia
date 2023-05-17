@@ -1,0 +1,11 @@
+<section class="container-fluid container-fluid-max-xl">
+  <div class="neo_slider_services">
+    <div class="swiper-wrapper">
+      [#list 1..configuration.quantityCards as item]
+      <div class="swiper-slide neo_slider_services_item">
+        <lfr-drop-zone data-lfr-drop-zone-id="dropzone-${item}"></lfr-drop-zone>
+      </div>
+      [/#list]
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "dataType": "int",
+          "label": "Quantidade de cards",
+          "name": "quantityCards",
+          "type": "text",
+          "typeOptions": {
+            "validation": {
+              "min": 3,
+              "type": "number"
+            }
+          },
+          "defaultValue": "6"
+        }
+      ]
+    }
+  ]
+}

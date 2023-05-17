@@ -1,8 +1,10 @@
 [#macro getValues obj]
+[#assign publication_date =
+obj.getDocument().getRootElement().elements()[0].selectSingleNode("dynamic-content").getStringValue()?trim /]
 [#assign image =
-obj.getDocument().getRootElement().elements()[0].selectSingleNode("dynamic-content").getText()?eval.url /]
+obj.getDocument().getRootElement().elements()[1].selectSingleNode("dynamic-content").getText()?eval.url /]
 [#assign description =
-obj.getDocument().getRootElement().elements()[1].selectSingleNode("dynamic-content").getStringValue()?trim /]
+obj.getDocument().getRootElement().elements()[2].selectSingleNode("dynamic-content").getStringValue()?trim /]
 [#if description?length gt 100]
 [#assign description = description?substring(0,100) /]
 [/#if]
