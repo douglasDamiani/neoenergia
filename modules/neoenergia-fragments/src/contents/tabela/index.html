@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    [#list 1..configuration.numCols as column]
+    <th>
+      <div data-lfr-editable-id="title-table-${column}" data-lfr-editable-type="rich-text">
+        Titulo ${column}
+      </div>
+    </th>
+    [/#list]
+  </tr>
+  [#list 1..configuration.numRows as row]
+  <tr>
+    [#list 1..configuration.numCols as column]
+    <td>
+      <div data-lfr-editable-id="text-table-${row}-${column}" data-lfr-editable-type="rich-text">
+        Texto editavel
+      </div>
+    </td>
+    [/#list]
+  </tr>
+  [/#list]
+</table>

@@ -1,0 +1,38 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "dataType": "int",
+          "label": "Quantidade de colunas",
+          "name": "numCols",
+          "type": "text",
+          "defaultValue": "3",
+          "typeOptions": {
+            "validation": {
+              "errorMessage": "Insira um número entre 1 e 100.",
+              "type": "number",
+              "min": 1,
+              "max": 20
+            }
+          }
+        },
+        {
+          "dataType": "int",
+          "label": "Quantidade de linhas",
+          "name": "numRows",
+          "type": "text",
+          "defaultValue": "3",
+          "typeOptions": {
+            "validation": {
+              "errorMessage": "Insira um número entre 1 e 100.",
+              "type": "number",
+              "min": 1,
+              "max": 100
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
