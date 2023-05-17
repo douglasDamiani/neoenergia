@@ -1,5 +1,6 @@
 .neo_slider_services {
   margin-top: -40px;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1080px) {
@@ -33,7 +34,7 @@
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .neo_slider_services_item .btn {

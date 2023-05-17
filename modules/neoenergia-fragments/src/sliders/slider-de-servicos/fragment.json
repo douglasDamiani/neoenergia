@@ -4,5 +4,6 @@
   "htmlPath": "index.html",
   "jsPath": "main.js",
   "name": "Slider de servicos",
-  "type": "component"
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }
