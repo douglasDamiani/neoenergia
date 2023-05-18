@@ -1,36 +1,38 @@
 <header class="neo_header container-fluid container-fluid-max-xl">
   <div class="header__top-items">
-    <a title="Link para a página inicial" href="/">
-      <img alt="Logo Image" class="header__logo" data-lfr-editable-id="01-logo" data-lfr-editable-type="image"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnSURBVHgB7cwxEQAACAOxgn8fHB7wBiK6MHwEJKpnZUiZCAgIvgQHmksDKxJ1SeoAAAAASUVORK5CYII=" />
+    <a title="Link para a página inicial" href="${configuration.urlHome}">
+      <h1>
+        <img alt="Logo Image" class="header__logo" data-lfr-editable-id="logo" data-lfr-editable-type="image"
+          src="" />
+      </h1>
     </a>
-		<div class="header__top-score">
-    <ul>
-      <li>IBOV - NEOENERGIA</li>
-      <li><span id="date"></span> <span id="time"></span></li>
-      <li><span>R$ <span id="last_price"></span> </span><span id="difference_percent"></span></li>
-      <li><b>Acionistas e investidores</b></li>
-    </ul>
-  </div>
-		<div class="header__actions">
-		  <span class="material-symbols-outlined header__open-menu">menu</span>
+    <div class="header__top-score">
+      <ul>
+        <li>IBOV - NEOENERGIA</li>
+        <li><span id="date"></span> <span id="time"></span></li>
+        <li><span>R$ <span id="last_price"></span> </span><span id="difference_percent"></span></li>
+        <li><b>Acionistas e investidores</b></li>
+      </ul>
+    </div>
+    <div class="header__actions">
+      <span class="material-symbols-outlined header__open-menu">menu</span>
       <div class="header__language">
         <span class="text-lang">${themeDisplay.getLanguageId()?substring(0,2)?upper_case}</span>
         <span class="symbol-lang material-symbols-outlined">language</span>
-      <ul>
-				[#list languageUtil.getAvailableLocales() as item]
+        <ul>
+          [#list languageUtil.getAvailableLocales() as item]
           [#if item != themeDisplay.getLanguageId()]
-				    <li>${item?substring(0,2)?upper_case}</li>
-				  [/#if]
-        [/#list]
-			</ul>
-		</div>
-		  <span class="material-symbols-outlined header__accessibility">accessibility_new</span>
+          <li>${item?substring(0,2)?upper_case}</li>
+          [/#if]
+          [/#list]
+        </ul>
+      </div>
+      <!-- <span class="material-symbols-outlined header__accessibility">accessibility_new</span>-->
       <span class="material-symbols-outlined header__search">search</span>
-		</div>
+    </div>
 
   </div>
-  
+
   <lfr-widget-nav></lfr-widget-nav>
 
   <div class="search-bar">

@@ -1,0 +1,19 @@
+{
+    "fieldSets": [
+        {
+            "fields": [
+                {
+                    "name": "urlHome",
+                    "label": "Link de URL da Home do site",
+                    "description": "",
+                    "type": "text",
+                    "typeOptions": {
+                        "placeholder": "/home"
+                    },
+                    "dataType": "string",
+                    "defaultValue": "/"
+                }
+            ]
+        }
+    ]
+}
