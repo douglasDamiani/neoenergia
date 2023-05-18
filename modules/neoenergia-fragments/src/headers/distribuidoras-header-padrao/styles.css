@@ -48,6 +48,7 @@
 
 .neo_distributors_itern_page aside {
   display: none;
+  position: relative;
 }
 
 @media (min-width: 1080px) {
