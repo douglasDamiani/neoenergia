@@ -1,7 +1,152 @@
-.faixa-de-bandeira-tarifaria {
-  color: inherit;
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+.neo_stripe_tax_flag {
+  display: flex;
+  flex-direction: column;
+}
+
+.neo_stripe_tax_flag_header {
+  display: flex;
+  padding: 8px 17px;
+  align-items: center;
+  height: 85px;
+  justify-content: space-between;
+  background: #FFF5EC;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(1) {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(2) {
+  height: 100%;
+  width: 1px;
+  background: #DBDDDB;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(3) {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(3).verde>span{
+  color: #26BF64;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(3).amarela>span{
+  color: yellow;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(3).vermelha>span{
+  color: #C00000;
+}
+
+.neo_stripe_tax_flag_type {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-transform: capitalize;
+}
+
+.neo_stripe_tax_flag_info {
+  color: #26BF64;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  display: block;
+}
+
+.neo_stripe_tax_flag_title {
+  color: #3A3735;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: block;
+}
+
+.neo_stripe_tax_flag_header>div:nth-of-type(1)>a {
+  color: #26BF64;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.neo_stripe_tax_flag_body {
+  background: #D8CFC7;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.neo_stripe_tax_flag_body>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .neo_stripe_tax_flag {
+    flex-direction: row;
+    height: 120px;
+  }
+
+  .neo_stripe_tax_flag_header {
+    flex: 30%;
+    padding: 0;
+    align-items: center;
+    height: 100%;
+  }
+
+  .neo_stripe_tax_flag_header>div:nth-of-type(1), .neo_stripe_tax_flag_header>div:nth-of-type(3){
+    padding: 16px 32px;
+    height: auto;
+  }
+
+  .neo_stripe_tax_flag_body {
+    flex: 70%;
+    flex-direction: row;
+    padding: 16px 24px;
+  }
+
+  .neo_stripe_tax_flag_body>div {
+    justify-content: flex-start;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .neo_stripe_tax_flag_body>div:nth-of-type(2){
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .neo_stripe_tax_flag_body>div:nth-of-type(2)>div{
+    display: flex;
+    gap: 12px;
+  }
+
+  .neo_stripe_tax_flag_body>div img{
+    object-fit: contain;
+    height: 95px;
+  }
+
+  .neo_stripe_tax_flag_info {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .neo_stripe_tax_flag_title {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    max-width: 200px;
+  }
+
+  .neo_stripe_tax_flag_type, .neo_stripe_tax_flag_number {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
 }

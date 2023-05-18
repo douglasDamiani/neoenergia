@@ -3,10 +3,25 @@
     {
       "fields": [
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "name": "typeFlag",
+          "label": "Bandeira tarifária",
+          "description": "",
+          "type": "select",
+          "dataType": "string",
+          "typeOptions": {
+            "validValues": [
+              {
+                "value": "verde"
+              },
+              {
+                "value": "amarela"
+              },
+              {
+                "value": "vermelha"
+              }
+            ]
+          },
+          "defaultValue": "verde"
         }
       ]
     }

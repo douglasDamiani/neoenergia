@@ -4,5 +4,6 @@
   "htmlPath": "index.html",
   "jsPath": "main.js",
   "name": "Faixa de bandeira tarifaria",
-  "type": "component"
+  "type": "component",
+  "thumbnailPath": "thumbnail.png"
 }
