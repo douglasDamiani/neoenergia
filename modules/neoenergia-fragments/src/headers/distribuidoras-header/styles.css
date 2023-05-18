@@ -34,6 +34,7 @@
 
 .neo__distribution_header_nav>li {
   cursor: pointer;
+  position: relative;
 }
 
 .neo__distribution_header_nav>li>span {
@@ -162,4 +163,10 @@
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
+}
+
+@media (max-width: 1080px) {
+  .neo__distribution_header {
+    display: none;
+  }
 }
