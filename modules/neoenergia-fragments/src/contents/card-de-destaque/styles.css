@@ -1,7 +1,15 @@
-.card-de-destaque {
-  color: inherit;
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+.neo_card_link{
+  background: #00402A;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  gap: 30px;
+  padding: 20px 30px;
+  display: block;
+  height: 150px;
+  text-decoration: none !important;
+}
+
+.neo_card_link>h3, .neo_card_link>span{
+  color: #fff;
 }

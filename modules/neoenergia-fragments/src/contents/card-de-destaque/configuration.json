@@ -3,10 +3,15 @@
     {
       "fields": [
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "name": "url",
+          "label": "Url de redirectionamento",
+          "description": "",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "https://"
+          },
+          "dataType": "string",
+          "defaultValue": ""
         }
       ]
     }

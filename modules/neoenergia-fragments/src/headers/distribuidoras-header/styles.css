@@ -43,18 +43,19 @@
 
 .neo__distribution_header_nav_submenu {
   position: absolute;
-  top: 20px;
+  top: 27px;
   left: -24px;
   z-index: 1000;
   display: none;
-  gap: 32px;
+  gap: 15px;
   background: #00402A;
-  padding: 40px 24px 16px 24px;
+  padding: 40px 0 16px 10px;
+  width: 250px;
 }
 
 .neo__distribution_header_nav_submenu::before {
   content: '';
-  height: 29px;
+  height: 23px;
   width: 100%;
   background: #213914;
   display: block;
@@ -65,6 +66,7 @@
 
 .neo__distribution_header_nav>li:hover>.neo__distribution_header_nav_submenu {
   display: flex;
+  flex-direction: column;
 }
 
 
@@ -77,15 +79,70 @@
   gap: 10px;
 }
 
+.neo__distribution_header_nav_submenu>ul>li {
+  position: relative;
+  padding-right: 10px;
+}
+
+
+.neo__distribution_header_nav_submenu>ul>li:hover .neo__distribution_header_nav_menu_inside {
+  opacity: 1;
+  transform: translateX(0);
+  transition: .4s;
+  pointer-events: auto;
+}
+
+.neo__distribution_header_nav_menu_inside {
+  padding: 20px;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: .4s;
+  position: absolute;
+  left: 239px;
+  background: #005b3b;
+  top: -22px;
+}
+
+.neo__distribution_header_nav_menu_inside>span {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #fff;
+  color: #fff;
+  display: block;
+  white-space: nowrap;
+}
+
+.neo__distribution_header_nav_menu_inside>ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.neo__distribution_header_nav_menu_inside a {
+  color: #fff;
+  white-space: nowrap;
+}
+
 .neo__distribution_header_nav_submenu>ul>li:first-child>a {
   text-transform: uppercase;
-  white-space: nowrap;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .neo__distribution_header_nav_submenu>ul>li>a {
   color: #fff;
   text-decoration: none !important;
   font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.neo__distribution_header_nav_submenu>ul>li>a>span:nth-of-type(2){
+  transform: rotate(-90deg);
 }
 
 .neo__distribution_header_distribution_list {
@@ -106,7 +163,7 @@
 
 .neo__distribution_header_distribution_list>ul::before {
   content: '';
-  height: 29px;
+  height: 23px;
   width: 100%;
   background: #213914;
   display: block;
