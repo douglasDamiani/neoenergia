@@ -3,7 +3,19 @@
   width: 100%;
 }
 
-.neo_table tr {
-  border-bottom: 1px solid #ddd;
-  padding: 5px;
+.neo_table tr td, .neo_table tr th {
+  padding: 7px 10px;
+}
+
+.neo_table tr th{
+  background: var(--brand-color-2);
+  color: #fff;
+}
+
+.neo_table tr:nth-child(odd) td{
+  background: rgb(234, 234, 234);
+}
+
+.neo_table a{
+  color: var(--brand-color-1);
 }

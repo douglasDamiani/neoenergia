@@ -24,8 +24,9 @@
 
   .neo_hero_products img,
   .neo_hero_products picture {
-    height: 480px;
+    height: 100%;
   }
+  
 }
 
 .neo_hero_products_box {

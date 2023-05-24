@@ -21,6 +21,13 @@
           "defaultValue": "pequeno"
         },
         {
+          "name": "hasIcon",
+          "label": "Tem icone?",
+          "description": "",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
           "name": "isExternalLink",
           "label": "É um link externo?",
           "description": "",

@@ -14,11 +14,10 @@ obj.getDocument().getRootElement().elements()[2].selectSingleNode("dynamic-conte
 <div class="neo_latest_news">
   [#if collectionObjectList??]
   [#list collectionObjectList as item]
-  [#if item?index gte 1]
+  [#if item?index gt 0]
   [#break /]
   [/#if]
 
-  [#attempt]
   [@getValues obj=item /]
   <a class="neo_latest_news_item" href="/w/${item.getUrlTitle()}">
     <img src="${image}" />
@@ -28,8 +27,6 @@ obj.getDocument().getRootElement().elements()[2].selectSingleNode("dynamic-conte
       <div>${description}</div>
     </div>
   </a>
-  [#recover]
-  [/#attempt]
   [/#list]
   [/#if]
   <div>

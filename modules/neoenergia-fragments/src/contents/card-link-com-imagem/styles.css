@@ -31,11 +31,11 @@
   width: 100%;
   height: 400px;
   object-fit: cover;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 4s ease-in-out;
+  -moz-transition: all 4s ease-in-out;
+  -o-transition: all 4s ease-in-out;
+  -ms-transition: all 4s ease-in-out;
+  transition: all 4s ease-in-out;
 }
 
 .neo_card_link.small .neo_card_link_img {

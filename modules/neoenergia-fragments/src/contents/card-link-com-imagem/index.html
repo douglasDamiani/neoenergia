@@ -9,6 +9,7 @@
   <div class="neo_card_link_layer"></div>
   <div class="neo_card_link_text">
     <span data-lfr-editable-id="card-title" data-lfr-editable-type="text">Titulo editavel</span>
+    [#if configuration.hasIcon]
     <span class="material-symbols-outlined card-services__icon">
       [#if configuration.isExternalLink]
       arrow_outward
@@ -16,5 +17,6 @@
       arrow_forward
       [/#if]
     </span>
+    [/#if]
   </div>
 </a>

@@ -27,6 +27,8 @@
 
 .neo_highlight_content_no_margin>div:last-child>picture img {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 1080px) {
