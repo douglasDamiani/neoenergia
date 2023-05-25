@@ -674,5 +674,36 @@
   gap: 10px;
   font-size: 1rem;
   padding: 16px;
+  text-decoration: none;
+}
+
+.neo_header_mobile>ul>li>ul{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  padding: 0 16px;
+}
+
+.neo_header_mobile>ul>li>ul.show{
+  max-height: 1000px;
+  padding: 24px 16px;
+}
+
+.neo_header_mobile>ul>li>ul li a{
+  color:#3A3735;
+}
+
+.neo_header_mobile .material-symbols-outlined{
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.neo_header_mobile .material-symbols-outlined.show{
+  transform: rotate(-90deg);
+  transition: all 0.3s ease-in-out;
 }
 

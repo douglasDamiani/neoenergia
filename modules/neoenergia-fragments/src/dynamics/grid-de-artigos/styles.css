@@ -1,10 +1,12 @@
 .neo_latest_news {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .neo_latest_news>a {
   height: 254px;
+  border-radius: 24px;
 }
 
 .neo_latest_news_item {
@@ -15,6 +17,7 @@
   position: relative;
   text-decoration: none !important;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .neo_latest_news_item img, .neo_latest_news_item picture {
@@ -66,20 +69,22 @@
 .neo_latest_news>div:last-child {
   display: flex;
   flex-wrap: wrap;
+  gap: 24px;
 }
 
 .neo_latest_news>div:last-child>a {
-  width: calc(100%/2);
+  width: calc((100%/2) - 12px);
   height: 154px;
 }
 
 @media (min-width: 768px) {
   .neo_latest_news {
     flex-direction: row;
+    gap: 24px;
   }
 
   .neo_latest_news>a {
-    height: 500px;
+    height: 524px;
     width: 40%;
   }
 

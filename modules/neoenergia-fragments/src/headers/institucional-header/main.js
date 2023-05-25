@@ -3,6 +3,7 @@ const elMobileMenu = fragmentElement.querySelector('.neo_header_mobile');
 const elSearch = fragmentElement.querySelector('.header__search');
 const elSearchBar = fragmentElement.querySelector('.search-bar');
 const availableLanguages = fragmentElement.querySelectorAll(".header__language>ul>li");
+const accordionsMobileMenu =fragmentElement.querySelectorAll(".neo_header_mobile>ul>li>a");
 
 const populateQuotas = (documentXML) => {
     const infos = ["Date", "Last_Price", "Time", "Difference_Percent"];
@@ -73,4 +74,11 @@ elOpenMenu.addEventListener('click',  () => {
 
 elSearch.addEventListener('click', function () {
     elSearchBar.classList.toggle('open')
+})
+
+accordionsMobileMenu.forEach(accordionAnchor => {
+    accordionAnchor.addEventListener('click',() =>{
+        accordionAnchor.lastElementChild.classList.toggle('show');
+        accordionAnchor.nextElementSibling.classList.toggle('show');
+    })
 })

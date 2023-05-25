@@ -5,11 +5,11 @@
 }
 
 .neo_grid_related_links>div>div {
-  width: calc(100%/2 - 24px);
+  width: calc(100%/2 - 12px);
 }
 
 @media (min-width: 768px) {
   .neo_grid_related_links>div>div {
-    width: calc(100%/3 - 24px);
+    width: calc(100%/3 - 16px);
   }
 }

@@ -4,6 +4,7 @@
   display: block;
   background: gray;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .neo_card_link.small {

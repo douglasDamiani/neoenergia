@@ -7,6 +7,7 @@
   flex-shrink: 0;
   padding: 0 10px;
   cursor: pointer;
+  border-radius: 24px;
 }
 
 .neo_banner_slide_content {
@@ -17,6 +18,7 @@
   width: 100%;
   object-fit: cover;
   height: 400px;
+  border-radius: 24px;
 }
 
 .neo_banner_slide_description {
@@ -27,6 +29,7 @@
   color: white;
   width: 100%;
   padding: 56px;
+  border-radius: 24px;
 }
 
 .neo_banner_slide_description h3 {
