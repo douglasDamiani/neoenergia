@@ -1,6 +1,6 @@
-.neo_swiper_banner{
+.neo_swiper_banner {
   overflow-x: hidden;
-	position: relative;
+  position: relative;
 }
 
 .neo_banner_slide_item {
@@ -47,19 +47,19 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
-	margin: 0
+  margin: 0
 }
 
 
-.swiper-pagination{
-   display: block;
-	 position: relative;
-	 margin: 20px auto;
+.swiper-pagination {
+  display: block;
+  position: relative;
+  margin: 20px auto;
 }
 
-.swiper-pagination > span{
-	border-radius: 0px;
-	background-color: #41493d;
+.swiper-pagination>span {
+  border-radius: 0px;
+  background-color: #41493d;
   color: #fff;
   font-size: 20px;
   height: 4px;
@@ -67,7 +67,7 @@
   margin: 0 4px;
 }
 
-.swiper-pagination > span:focus {
+.swiper-pagination>span:focus {
   outline: thin dotted;
   outline: 0px auto -webkit-focus-ring-color;
   outline-offset: 0px;
@@ -81,18 +81,13 @@
 .neo_banner_slide_btn {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  font-family: "Lato", sans-serif;
   padding: 4px 16px;
   margin-top: 90px;
   gap: 8px;
   border: none;
   bottom: 0;
-
   width: 155px;
   height: 40px;
-
   background: #ffffff;
   border-radius: 20px;
 }
@@ -119,7 +114,7 @@
     line-height: 20px;
   }
 
-  .banner-slide-item img {
+  .neo_banner_slide_item img, .neo_banner_slide_description, .neo_banner_slide_item {
     height: 164px;
   }
 
@@ -127,7 +122,6 @@
     width: 112px;
     height: 32px;
     margin-top: 24px;
-
     padding: 4px 16px;
     gap: 0;
   }
