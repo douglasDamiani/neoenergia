@@ -17,6 +17,11 @@
   transition: .5s;
 }
 
+.neo_accordion>button.show>span:last-child{
+  transform: rotate(-90deg);
+  transition: .5s;
+}
+
 .neo_accordion>button>h3{
   color: #41493D;
   font-size: 1.125rem;
