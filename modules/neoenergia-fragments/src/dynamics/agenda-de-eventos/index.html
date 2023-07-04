@@ -3,48 +3,43 @@
   <link rel="stylesheet" href="/modules/neoenergia-fragments/src/dynamics/agenda-de-eventos/styles.css">
 </head> -->
 
-
 [#macro assignFields item]
 [#assign 
   rootElement = item.getDocument().getRootElement()
-
-  title = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_title']").element("dynamic-content").getText()
-  date = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_data']").element("dynamic-content").getText()
-  description = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_description']").element("dynamic-content").getText()
-
+  event_title = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_title']").element("dynamic-content").getText()
+  event_data = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_data']").element("dynamic-content").getText()
+  event_description = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_description']").element("dynamic-content").getText()
+  event_address = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_address']").element("dynamic-content").getText()
+  event_initial_hour = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_initial_hour']").element("dynamic-content").getText()
+  event_end_hour = rootElement.selectSingleNode("//dynamic-element[@field-reference='event_end_hour']").element("dynamic-content").getText()
 ]
 [/#macro]
 
 [#if collectionObjectList??]
 <div class="neoenergia_events-calendar">
+  <h2>Proximos Eventos</h2>
+  <div class="swiper-wrapper">
   [#list collectionObjectList as item]
   [@assignFields item=item /]
-      <h3>
-          ${title}
-      </h3>
-      <span>${description}</span>
-      <span>${date}</span>
+        <div class="swiper-slide">
+          <section class="neoenergia_events-calendar_content">
+            <div class="neoenergia_events-calendar_content_spotlight">
+                <span class="neoenergia_events-calendar_weekday">SEGUNDA-FEIRA</span>
+                <h3 class="neoenergia_events-calendar_date" data-event-date="${event_data}">${event_data}</h3>
+            </div>
+            <div class="neoenergia_events-calendar_content_main">
+              <h3 class="">${event_title}</h3>
+              <p>${event_description}</p>
+        
+              <span>${event_address}</span>
+              <span>${event_initial_hour} às ${event_end_hour}</span>
+            </div>
+          </section>
+        </div>
   [/#list]
+  </div>
+  <div class="swiper-pagination"></div>
 </div>
 [/#if]
 
-<div class="neoenergia_events-calendar">
 
-<h2>Proximos Eventos</h2>
-
-<section class="neoenergia_events-calendar_content">
-  <div class="neoenergia_events-calendar_content_spotlight">
-      <span class="neoenergia_events-calendar_weekday">SEGUNDA-FEIRA</span>
-      <h3 class="neoenergia_events-calendar_date">03/12</h3>
-  </div>
-  <div class="neoenergia_events-calendar_content_main">
-
-    <h3 class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-    <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-    <span>Rua Lorem Ipsum, 123</span>
-    <span>15h às 18h</span>
-
-  </div>
-</section>
-</div>
