@@ -1,55 +1,35 @@
-[#macro getValues obj]
-[#assign publication_date =
-obj.getDocument().getRootElement().elements()[0].selectSingleNode("dynamic-content").getStringValue()?trim /]
-[#assign image =
-obj.getDocument().getRootElement().elements()[1].selectSingleNode("dynamic-content").getText()?eval.url /]
-[#assign description =
-obj.getDocument().getRootElement().elements()[2].selectSingleNode("dynamic-content").getStringValue()?trim /]
-[#if description?length gt 100]
-[#assign description = description?substring(0,100) /]
-[/#if]
+[#macro getValues item]
+  [#assign 
+    rootElement = item.getDocument().getRootElement()
+    date = rootElement.selectSingleNode("//dynamic-element[@field-reference='publication_date']").element("dynamic-content").getStringValue()?trim
+    publication_date = date?split("-")?reverse?join("/")
+    bannerImageObj = rootElement.selectSingleNode("//dynamic-element[@field-reference='banner_image']").element("dynamic-content").getText()?eval
+    bannerImageSrc = bannerImageObj.url
+    bannerImageAlt = bannerImageObj.alt
+  ]
 [/#macro]
 
-
-<div class="neo_latest_news">
-  [#if collectionObjectList??]
-  [#list collectionObjectList as item]
-  [#if item?index gt 0]
-  [#break /]
-  [/#if]
-
-  [@getValues obj=item /]
+[#macro neoLatestsNewsItem item]
+  [@getValues item=item /]
   <a class="neo_latest_news_item" href="/w/${item.getUrlTitle()}">
-    <img src="${image}" />
-    <div></div>
+    <img src="${bannerImageSrc}" alt="${bannerImageAlt}"/>
+		<div></div>
     <div>
+      <p>${publication_date}</p>
       <h3>${item.title}</h3>
-      <div>${description}</div>
     </div>
   </a>
-  [/#list]
+[/#macro]
+
+<div class="neo_latest_news">
+  [#if collectionObjectList?has_content]
+    [#assign item = collectionObjectList?sequence[0]]
+    [@neoLatestsNewsItem item=item /]
+	
+    <div>
+      [#list collectionObjectList?sequence[1..4] as item]
+        [@neoLatestsNewsItem item=item /]
+      [/#list]
+    </div>
   [/#if]
-  <div>
-    [#if collectionObjectList??]
-    [#list collectionObjectList as item]
-    [#if item?index == 0]
-    [#continue /]
-    [/#if]
-    [#attempt]
-    [@getValues obj=item /]
-    <a class="neo_latest_news_item" href="/w/${item.getUrlTitle()}">
-      <img src="${image}" />
-      <div></div>
-      <div>
-        <h3>${item.title}</h3>
-        <div>
-          ${description}
-        </div>
-      </div>
-    </a>
-    [#recover]
-    [/#attempt]
-    [/#list]
-    [/#if]
-  </div>
 </div>
