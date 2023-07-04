@@ -3,10 +3,9 @@
     {
       "fields": [
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "label": "Coleção com Eventos",
+          "name": "collection",
+          "type": "collectionSelector"
         }
       ]
     }
