@@ -14,7 +14,47 @@
   color: var(--color-write);
 }
 
-.neoenergia_events-calendar {}
+.neoenergia_events-calendar {
+  width: 100%;
+  max-width: 1440px;
+}
+
+/*  */
+
+/* 
+.neoenergia_events-calendar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.neoenergia_events-calendar .swiper-pagination{
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  position: relative;
+}
+.neoenergia_events-calendar .swiper-pagination .swiper-pagination-bullet{
+  width: auto!important;
+  height: auto!important;
+  border-radius: unset!important;
+  background: transparent!important;
+}
+
+.neoenergia_events-calendar_content{
+  display: flex;
+  flex-direction: row;
+  width: 1440px;
+  height: 437px;
+  background-color: var(--color-backgroud-primary);
+} */
+
+/*  */
 
 .neoenergia_events-calendar_title{
   color: var(--cinza-1, #3A3735);
@@ -70,8 +110,6 @@
   gap: 16px;
 
 }
-
-
 
 .neoenergia_events-calendar_content_title {
 
@@ -169,8 +207,6 @@
   .neoenergia_events-calendar_content_p{
   line-height: 1.7;
   }
-
-
 
   .neoenergia_events-calendar_img {
     margin: 0;
