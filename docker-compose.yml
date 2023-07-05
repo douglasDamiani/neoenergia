@@ -1,11 +1,24 @@
 version: '3'
 services:
-  mysql:
-    image: mysql:8.0.29
-    environment:
-      MYSQL_DATABASE: lportal
-      MYSQL_ROOT_PASSWORD: root
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-client-handshake=FALSE --lower-case-table-names=0
-    user: mysql
+  liferay:
+    image: liferay/dxp:7.4.13-u83
+    user: liferay
+
     ports:
-      - "3306:3306"
+      # Expose the Gogo shell port so that users can easily access it from Docker host
+      - 11311:11311
+      - 8080:8080
+    volumes:
+      - './configs/volumes/liferay/deploy:/opt/liferay/deploy'
+
+  # database:
+  #   image: mysql:8.0.29
+  #   environment:
+  #     MYSQL_DATABASE: lportal
+  #     MYSQL_ROOT_PASSWORD: root
+  #   command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-client-handshake=FALSE --lower-case-table-names=0
+  #   user: mysql
+  #   ports:
+  #     - "3306:3306"
+
+      

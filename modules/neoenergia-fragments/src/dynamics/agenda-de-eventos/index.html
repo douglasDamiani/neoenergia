@@ -1,7 +1,85 @@
-<div class="agenda-de-eventos">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Agenda de eventos
-    </lfr-editable>
-  </h1>
-</div>
+[#setting locale="pt_BR"]
+[#macro assignFields item]
+  [#assign
+    rootElement = item.getDocument().getRootElement()
+    event_title =
+      rootElement.selectSingleNode("//dynamic-element[@field-reference='event_title']").element("dynamic-content").getText()
+    event_data =
+      rootElement.selectSingleNode("//dynamic-element[@field-reference='event_data']").element("dynamic-content").getText()
+    event_description =
+      rootElement.selectSingleNode("//dynamic-element[@field-reference='event_description']").element("dynamic-content").getText()
+    event_address =
+      rootElement.selectSingleNode("//dynamic-element[@field-reference='event_address']").element("dynamic-content").getText()
+    event_initial_hour =
+      rootElement.selectSingleNode("//dynamic-element[@field-reference='event_initial_hour']").element("dynamic-content").getText()
+    event_end_hour =
+      rootElement.selectSingleNode("//dynamic-element[@field-reference='event_end_hour']").element("dynamic-content").getText()
+
+      imageObj = 
+        rootElement.selectSingleNode("//dynamic-element[@field-reference='event_image']").element("dynamic-content").getText()?eval
+      imageSrc = imageObj.url
+      imageAlt = imageObj.alt
+
+    parsedDate = event_data?datetime("yyyy-MM-dd")
+    formattedDate = parsedDate?string("dd/MM")
+    weekday = parsedDate?string("EEEE")
+
+  ]
+[/#macro]
+
+
+
+[#if collectionObjectList??]
+  <div class="neoenergia_events-calendar swiper">
+    <h2 class="neoenergia_events-calendar_title">Proximos Eventos</h2>
+
+    <div class="swiper-wrapper">
+
+      [#list collectionObjectList as item]
+      [#if item_index < 15 ]
+      [@assignFields item=item /]
+        
+          <div class="swiper-slide">
+            <section class="neoenergia_events-calendar_item">
+              <div class="neoenergia_events-calendar_spotlight">
+                <span class="neoenergia_events-calendar_weekday">${weekday}</span>
+                <h3 class="neoenergia_events-calendar_date" data-event-date="${formattedDate}" >${formattedDate}</h3>
+              </div>
+              <div class="neoenergia_events-calendar_container">
+
+                <div class="neoenergia_events-calendar_content">
+
+                  <h3 class="neoenergia_events-calendar_content_title">${event_title}</h3>
+                  <p class="neoenergia_events-calendar_content_p" data-text-truncate="4">${event_description}</p>
+
+                  <div class="neoenergia_events-calendar_details">
+                    <span class="material-symbols-outlined"> location_on  </span>
+                    <span class="neoenergia_events-calendar_content_span">${event_address}</span>
+                  </div>
+
+                  <div class="neoenergia_events-calendar_details">
+                    <span class="material-symbols-outlined"> schedule </span>
+                    <span class="neoenergia_events-calendar_content_span">${event_initial_hour} às ${event_end_hour}</span>
+                  </div>
+
+                </div>
+
+                <div class="neoenergia_events-calendar_img">
+                  <img
+                    srcset="${imageSrc}"
+                    alt="${imageAlt}">
+                </div>
+
+              </div>
+            </section>
+          </div>
+        [/#if]
+
+      [/#list]
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+  </div>
+[/#if]
