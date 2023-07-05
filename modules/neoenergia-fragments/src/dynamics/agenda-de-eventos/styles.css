@@ -3,8 +3,15 @@
 :root {
   --color-green-forest: #00402A;
   --color-green-grass: #26BF64;
+  --color-green-primary: #00A443;
   --color-grey: #3A3735;
+  --color-gray-pagination: #615D5A;
   --color-write: #FFF;
+
+  --spotlight-width-desk-size: 316px;
+  --spotlight-height-mob-size: 126px;
+
+  --font-size-description: 1rem;
 
   --font-famiy-lato: 'Lato', sans-serif;
   --font-family-iberpangea: 'IberPangea Medium', sans-serif;
@@ -14,47 +21,38 @@
   color: var(--color-write);
 }
 
-.neoenergia_events-calendar {
-  width: 100%;
-  max-width: 1440px;
+/* custom swiper css */
+.neoenergia_events-calendar .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  color: var(--color-green-primary);
+  border-bottom: var(--color-green-primary) solid 1px;
 }
-
-/*  */
-
-/* 
-.neoenergia_events-calendar{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  font-size: 16px;
+.neoenergia_events-calendar .swiper-pagination-bullet{
+  color: var(--color-gray-pagination);
 }
-
 .neoenergia_events-calendar .swiper-pagination{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 32px;
   padding-top: 24px;
   padding-bottom: 8px;
   position: relative;
+  overflow-x: scroll
 }
 .neoenergia_events-calendar .swiper-pagination .swiper-pagination-bullet{
   width: auto!important;
   height: auto!important;
   border-radius: unset!important;
   background: transparent!important;
+  opacity: unset;
 }
 
-.neoenergia_events-calendar_content{
-  display: flex;
-  flex-direction: row;
-  width: 1440px;
-  height: 437px;
-  background-color: var(--color-backgroud-primary);
-} */
-
 /*  */
+
+
+.neoenergia_events-calendar {
+  width: 100%;
+  max-width: 1440px;
+}
 
 .neoenergia_events-calendar_title{
   color: var(--cinza-1, #3A3735);
@@ -63,14 +61,22 @@
   font-style: normal;
   font-weight: 400;
   margin-left: 1rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .neoenergia_events-calendar_item {
+  min-height: 730px;
   background-color: var(--color-green-forest);
+  display: flex;
+  flex-direction: column;
 }
 
 .neoenergia_events-calendar_spotlight {
-  min-height: 124px;
+  min-height: var(--spotlight-height-mob-size);
   display: flex;
   flex-direction: column;
   border-radius: 0px 0px 24px 24px;
@@ -99,9 +105,12 @@
 
 
 .neoenergia_events-calendar_container {
-
   padding: 24px 16px;
-
+  max-height: calc(100% - var(--spotlight-height-mob-size));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
 
 .neoenergia_events-calendar_content {
@@ -112,7 +121,6 @@
 }
 
 .neoenergia_events-calendar_content_title {
-
   color: var(--color-write, #FFF);
   font-size: 20px;
   font-family: var(--font-family-iberpangea);
@@ -126,12 +134,17 @@
 .neoenergia_events-calendar_content_p {
 
   color: var(--color-write, #FFF);
-  font-size: 1rem;
+  font-size: var(--font-size-description);
   font-family: var(--font-famiy-lato);
   font-style: normal;
   font-weight: 400;
   line-height: 1.8;
   margin: 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 
 }
 
@@ -152,6 +165,7 @@
 
 .neoenergia_events-calendar_img {
   margin-top: 32px;
+  border-radius: 24px;
 }
 
 .neoenergia_events-calendar_img > img {
@@ -159,26 +173,31 @@
   width: 100%;
 }
 
-
-
 @media screen and (min-width: 1080px) {
 
   .neoenergia_events-calendar_title {
     font-family: var(--font-famiy-lato);
     font-size: 2.5rem;
     font-weight: 600;
-    margin-left: 56px;
+    margin-left: 56px;    
     
+  }
+
+  .neoenergia_events-calendar .swiper-pagination {
+    overflow-x: hidden !important;
+    justify-content: center !important;
   }
 
   .neoenergia_events-calendar_item {
     display: flex;
+    flex-direction: row;
     width: 100%;
+    min-height: auto;
     height: 437px;
   }
 
   .neoenergia_events-calendar_spotlight {
-    width: 316px;
+    width: var(--spotlight-width-desk-size);
     height: auto;
     border-radius: 0 32px 32px 0;
     padding: 56px;
@@ -198,6 +217,11 @@
     display: flex;
     flex-direction: row;
     gap: 88px;
+    flex: 1;
+    width: calc(100% - var(--spotlight-width-desk-size));
+    max-height: min-content;
+
+    justify-content: space-between;
   }
 
   .neoenergia_events-calendar_content_title{
@@ -205,7 +229,8 @@
   }
 
   .neoenergia_events-calendar_content_p{
-  line-height: 1.7;
+    line-height: 1.7;    
+    -webkit-line-clamp: 5;
   }
 
   .neoenergia_events-calendar_img {

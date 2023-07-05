@@ -8,6 +8,7 @@ if(eventsCalendar){
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+      dynamicMainBullets: 15,
       renderBullet: function (index, className) {
         const dates = fragmentElement.querySelectorAll("[data-event-date]");
         const datesArray = [];
@@ -18,8 +19,5 @@ if(eventsCalendar){
       }
     }
   });
-
-
-  console.log(swiper);
 
 }
