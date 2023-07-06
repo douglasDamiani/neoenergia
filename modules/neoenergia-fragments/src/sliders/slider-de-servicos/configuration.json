@@ -14,6 +14,18 @@
             }
           },
           "defaultValue": "6"
+        },
+        {
+          "name": "hasIcon",
+          "label": "Possui ícone?",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "name": "hasTitle",
+          "label": "Possui título?",
+          "type": "checkbox",
+          "defaultValue": true
         }
       ]
     }
