@@ -47,6 +47,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
 }
 
 .neo_latest_news_item h3,
@@ -57,6 +58,11 @@
 
 .neo_latest_news_item h3 {
   font-size: calc(1vmax + 1vmin);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
 }
 
 .neo_latest_news > div:last-child {
@@ -115,5 +121,15 @@
 @media (min-width: 1080px) {
   .neo_latest_news_item h3 {
     font-size: calc(0.8vmax + 1vmin);
+  }
+}
+
+@media (max-width: 768px) {
+  .neo_latest_news_item h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

@@ -1,12 +1,20 @@
 [#macro getValues item]
   [#assign 
-    rootElement = item.getDocument().getRootElement()
-    date = rootElement.selectSingleNode("//dynamic-element[@field-reference='publication_date']").element("dynamic-content").getStringValue()?trim
-    publication_date = date?split("-")?reverse?join("/")
-    bannerImageObj = rootElement.selectSingleNode("//dynamic-element[@field-reference='banner_image']").element("dynamic-content").getText()?eval
-    bannerImageSrc = bannerImageObj.url
-    bannerImageAlt = bannerImageObj.alt
-  ]
+    rootElement = item.getDocument().getRootElement() 
+    publication_date = rootElement.selectSingleNode("//dynamic-element[@field-reference='publication_date']").element("dynamic-content").getStringValue()?trim 
+    bannerImageObj = rootElement.selectSingleNode("//dynamic-element[@field-reference='banner_image']").element("dynamic-content").getText()?eval 
+  ]    
+  [#if bannerImageObj?has_content]
+    [#assign   
+      bannerImageSrc = bannerImageObj.url
+      bannerImageAlt = bannerImageObj.alt
+    ]
+  [#else]
+    [#assign   
+      bannerImageSrc = "#"
+      bannerImageAlt = "This post has no image"
+    ]
+   [/#if]
 [/#macro]
 
 [#macro neoLatestsNewsItem item]
@@ -15,8 +23,8 @@
     <img src="${bannerImageSrc}" alt="${bannerImageAlt}"/>
 		<div></div>
     <div>
-      <p>${publication_date}</p>
-      <h3>${item.title}</h3>
+      <p class="publication-date">${publication_date}</p>
+      <h3>${languageUtil.get(locale, item.title)}</h3>
     </div>
   </a>
 [/#macro]
