@@ -3,9 +3,6 @@
 	padding: 112px;
   background: var(--brand-color-2);
 }
-.neo_faixa_media_box-border{
-  border-radius: 24px;
-}
 
 .neo_faixa_media_box__button {
   display: flex;
