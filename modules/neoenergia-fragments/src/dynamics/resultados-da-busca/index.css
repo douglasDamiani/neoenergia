@@ -23,7 +23,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.25rem;
-  margin-bottom: 2rem;
   width: 100%;
   text-transform: lowercase;
 }
@@ -37,6 +36,25 @@
   width: 100%;
 }
 
+.neo_search-results__search-results .sheet {
+  padding: 0;
+  border: none;
+}
+
+.neo_search-results__search-results .taglib-empty-result-message {
+  margin: auto !important;
+}
+
+.neo_search-results__search-results  .taglib-empty-result-message-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--cinza-2, #615D5A);
+}
+
+.neo_search-results__search-results  .taglib-empty-result-message-description {
+  display: none;
+}
+
 .neo_search-results__facets {
   position: relative;
   display: flex;
@@ -45,8 +63,9 @@
 }
 
 @media (max-width: 1080px) {
-  .neo_search-results__wrapper {
+  .neo_search-results__results-wrapper {
     flex-wrap: wrap;
+    margin-top: 16px;
   }
 
   .neo_search-results__facets {
@@ -69,5 +88,9 @@
   .neo_search-results__facets > div {
     width: 240px;
     margin-right: 32px;
+  }
+
+  .neo_search-results__results-wrapper { 
+    margin-top: 32px;
   }
 }

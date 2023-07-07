@@ -5,7 +5,7 @@
 	<#assign destination = searchBarPortletDisplayContext.getSearchURL()/>
 </#if>
 
-<#assign placeholder = "Placeholder..."/>
+<#assign placeholder = languageUtil.get(locale, "search-bar-placeholder")/>
 
 <div class="neo_search-bar-container">
 	<@liferay_aui.fieldset cssClass="search-bar">
@@ -16,110 +16,269 @@
 			value=searchBarPortletDisplayContext.isEmptySearchEnabled()
 		/>
 
-		<div class="input-group ${searchBarPortletDisplayContext.isLetTheUserChooseTheSearchScope()?then("search-bar-scope","search-bar-simple")}">
-			<#if searchBarPortletDisplayContext.isLetTheUserChooseTheSearchScope()>
-				<div class="input-group-item input-group-item-shrink input-group-prepend">
-					<button aria-label="${languageUtil.get(locale, "submit")}" class="btn btn-secondary" type="submit">
-						<@clay.icon symbol="search"/>
-					</button>
-				</div>
-
-				<@liferay_aui.select
-					cssClass="search-bar-scope-select"
-					label=""
-					name=htmlUtil.escape(searchBarPortletDisplayContext.getScopeParameterName())
-					title="scope"
-					useNamespace=false
-					wrapperCssClass="input-group-item input-group-item-shrink input-group-prepend search-bar-search-select-wrapper"
-				>
-					<@liferay_aui.option
-            label="this-site"
-            selected=searchBarPortletDisplayContext.isSelectedCurrentSiteSearchScope()
-            value=searchBarPortletDisplayContext.getCurrentSiteSearchScopeParameterString()
+  <div class="neo_search-bar-container__fields has-default-search">
+		<div class="neo_search-bar--default">
+			<div class="input-group">
+				<div class="input-group-item search-bar-input-wrapper">
+					<input
+						autoFocus=true
+						autocomplete="off"
+						class="search-bar-input"
+						data-qa-id="searchInput"
+						id=${searchInputId}
+						name="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywordsParameterName())}"
+						placeholder="${placeholder}"
+						title="${languageUtil.get(locale, "search")}"
+						type="text"
+						value="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywords())}"
 					/>
 
-					<#if searchBarPortletDisplayContext.isAvailableEverythingSearchScope()>
-						<@liferay_aui.option
-							label="everything"
-							selected=searchBarPortletDisplayContext.isSelectedEverythingSearchScope()
-							value=searchBarPortletDisplayContext.getEverythingSearchScopeParameterString()
-						/>
-					</#if>
-				</@>
+					<@liferay_aui.input
+						name=htmlUtil.escape(searchBarPortletDisplayContext.getScopeParameterName())
+						type="hidden"
+						value=searchBarPortletDisplayContext.getScopeParameterValue()
+					/>
+				</div>
+			</div>
+		</div>
 
-				<#assign data = {
-					"test-id": "searchInput"
-				}/>
+		<div class="neo_search-bar--advanced">
+			<div class="input-group">
+				<div class="input-group-item search-bar-input-wrapper">
+					<label for="${searchInputId}-keywords">Estas palavras:</label>
+					<input
+						autoFocus=true
+						autocomplete="off"
+						class="search-bar-input"
+						data-qa-id="${searchInputId}-keywords"
+						id="${searchInputId}-keywords"
+						name="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywordsParameterName())}"
+						title="${languageUtil.get(locale, "search")}"
+						type="text"
+						value="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywords())}"
+					/>
 
-				<#assign searchInputId = namespace + stringUtil.randomId()/>
+					<@liferay_aui.input
+						name=htmlUtil.escape(searchBarPortletDisplayContext.getScopeParameterName())
+						type="hidden"
+						value=searchBarPortletDisplayContext.getScopeParameterValue()
+					/>
+				</div>
+			</div>
 
-				<@liferay_aui.input
-					autoFocus=true
-					autocomplete="off"
-					cssClass="search-bar-input"
-					data=data
-					id=searchInputId
-					label=""
-					name=htmlUtil.escape(searchBarPortletDisplayContext.getKeywordsParameterName())
-					placeholder=placeholder
-					title=languageUtil.get(locale, "search")
-					type="text"
-          useNamespace=false
-          value=htmlUtil.escape(searchBarPortletDisplayContext.getKeywords())
-          wrapperCssClass="input-group-item input-group-append search-bar-input-wrapper"
-        />
-      <#else>
+			<div class="input-group">
         <div class="input-group-item search-bar-input-wrapper">
+					<label for="${searchInputId}-mathphrase">Frase exata:</label>
+					<input
+						autoFocus=true
+						autocomplete="off"
+						class="search-bar-input"
+						data-qa-id="${searchInputId}-mathphrase"
+						id="${searchInputId}-mathphrase"
+						name="mathphrase"
+						title="${languageUtil.get(locale, "search")}"
+						type="text"
+						value="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywords())}"
+					/>
+
+					<@liferay_aui.input
+						name="mathphrase"
+						type="hidden"
+						value=searchBarPortletDisplayContext.getScopeParameterValue()
+					/>
+				</div>
+			</div>
+
+			<div class="input-group">
+        <div class="input-group-item search-bar-input-wrapper">
+          <label for="${searchInputId}-excludingwords">Excluir palavras:</label>
           <input
             autoFocus=true
             autocomplete="off"
             class="search-bar-input"
-            data-qa-id="searchInput"
-            id=${searchInputId}
-            name="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywordsParameterName())}"
-            placeholder="${placeholder}"
+            data-qa-id="${searchInputId}-excludingwords"
+            id="${searchInputId}-excludingwords"
+            name="excludingwords"
             title="${languageUtil.get(locale, "search")}"
             type="text"
             value="${htmlUtil.escape(searchBarPortletDisplayContext.getKeywords())}"
           />
 
           <@liferay_aui.input
-            name=htmlUtil.escape(searchBarPortletDisplayContext.getScopeParameterName())
+            name="excludingwords"
             type="hidden"
             value=searchBarPortletDisplayContext.getScopeParameterValue()
           />
         </div>
+      </div>
+    </div>
 
-        <div class="search-bar-buttons-wrapper">
-          <button 
-            aria-label="${languageUtil.get(locale, "search-bar-submit")}" 
-            class="btn btn-primary search-bar-button" 
-            type="submit"
-          >
-            ${languageUtil.get(locale, "search-bar-submit")} <span class="material-symbols-outlined">search</span>
-          </button>
 
-          <button 
-            aria-label="${languageUtil.get(locale, "search-bar-advanced-search")}" 
-            class="btn btn-primary search-bar-button search-bar-button--outline" 
-            type="button"
-          >
-            ${languageUtil.get(locale, "search-bar-advanced-search")} <span class="material-symbols-outlined">arrow_forward</span>
-          </button>
-        </div>
-      </#if>
-		</div>
+    <div class="neo_search-bar-buttons-wrapper">
+		<button 
+			aria-label="${languageUtil.get(locale, "submit")}"
+			class="btn btn-primary search-bar-button"
+			id="submit-button"
+		>
+			${languageUtil.get(locale, "search-bar-submit")} <span class="material-symbols-outlined">search</span>
+		</button>
+
+		<button
+			aria-label="${languageUtil.get(locale, "search-bar-advanced-search")}" 
+			class="btn btn-primary search-bar-button search-bar-button--outline search-bar-advanced-search" 
+			type="button"
+		>
+			${languageUtil.get(locale, "search-bar-advanced-search")} <span class="material-symbols-outlined">arrow_forward</span>
+		</button>
+    </div>
+  </div>
 	</@>
 </div>
 
-<#--  <script>
-	$('.search-bar-reset-start-page').each(function() {
-    this.setAttribute('value','1');
-  });
-</script>  -->
+<script>
+	const submitButton = document.querySelector("#submit-button");
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    submitButton.closest(".form").submit();
+  }) 
 
+  const searchBarContainer = document.querySelector(".neo_search-bar-container__fields");
+  const searchBarButton = document.querySelector(".search-bar-advanced-search");
+
+  const SEARCH_CLASSES = {
+		DEFAULT_SEARCH: "has-default-search",
+		ADVANCED_SEARCH: "has-advanced-search"
+	}
+  
+  searchBarButton.addEventListener("click", () => {
+	const searchBarContainerClasses = searchBarContainer.classList;
+    if(searchBarContainerClasses.contains(SEARCH_CLASSES.DEFAULT_SEARCH)){
+       searchBarContainerClasses.add(SEARCH_CLASSES.ADVANCED_SEARCH);
+	   searchBarContainerClasses.remove(SEARCH_CLASSES.DEFAULT_SEARCH);
+       
+	   searchBarButton.innerText = languageUtil.get(locale, "back-to-simple-search");
+	} else {
+	   searchBarContainerClasses.remove(SEARCH_CLASSES.ADVANCED_SEARCH);
+	   searchBarContainerClasses.add(SEARCH_CLASSES.DEFAULT_SEARCH)
+	}
+  })
+</script>
+
+<style>
+  .neo_search-bar-container .panel-body {
+    padding: 0;
+  }
+
+  .neo_search-bar-container__fields .search-bar-input {
+    border-radius: 8px;
+    border: 1px solid var(--cinza-3, #89837E);
+    background: var(--branco, #FFF);
+    width: 100%;
+    padding: 6px 16px;
+    line-height: 28px;
+    color: var(--cinza-1, #3A3735);
+  }
+
+  .neo_search-bar-container__fields .search-bar-input:focus, .neo_search-bar-container__fields .search-bar-input:focus-visible {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid var(--verde-2-principal, #00A443);
+  }
+
+  .neo_search-bar-container__fields .neo_search-bar-buttons-wrapper {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .neo_search-bar-container__fields .search-bar-button {
+    display: inline-flex;
+    gap: 16px;
+    flex-grow: 1;
+    padding: 8px 24px;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px !important;
+    color: var(--branco, #FFF);
+  }
+
+  .neo_search-bar-container__fields .search-bar-button--outline {
+    background: var(--branco, #FFF);
+    color: var(--btn-primary-border-color, #00A443);
+  }
+
+  .neo_search-bar-container__fields .search-bar-button > span.material-symbols-outlined {
+    font-size: 1rem;
+  }
+
+  .neo_search-bar-container__fields.has-default-search .neo_search-bar--advanced {
+    display: none;
+  }
+
+  .neo_search-bar-container__fields.has-advanced-search .neo_search-bar--default {
+    display: none;
+  }
+
+  .neo_search-bar-container__fields.has-advanced-search .search-bar-input-wrapper label {
+    color: var(--cinza-1, #3A3735);
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1080px) {
+    .neo_search-bar-container__fields.has-default-search .neo_search-bar--default {
+      margin-bottom: 16px;
+    }
+
+    .neo_search-bar-container__fields.has-default-search .neo_search-bar-buttons-wrapper {
+      column-gap: 23px;
+    }
+
+    .neo_search-bar-container__fields.has-default-search .search-bar-button {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .neo_search-bar-container__fields .search-bar-button {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    .neo_search-bar-container__fields.has-default-search {
+      display: flex;
+    }
+
+    .neo_search-bar-container__fields.has-default-search .neo_search-bar--default {
+      width: 100%;
+    }
+
+    .neo_search-bar-container__fields.has-default-search .search-bar-button:nth-of-type(1) {
+      margin-left: 24px;
+    }
+
+    .neo_search-bar-container__fields.has-default-search .search-bar-button:nth-of-type(2) {
+      margin-left: 16px;
+    }
+
+    .neo_search-bar-container__fields.has-advanced-search .search-bar-input-wrapper {
+      color: var(--cinza-1, #3A3735);
+      font-family: Lato;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75rem;
+      flex-shrink: 0;
+    }
+  }
+</style>
+
+<#--  search suggestions  -->
 <#assign searchBarPortletInstanceConfiguration = searchBarPortletDisplayContext.getSearchBarPortletInstanceConfiguration()/>
-
 <#if searchBarPortletInstanceConfiguration.enableSuggestions() >
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js" integrity="sha512-uxCwHf1pRwBJvURAMD/Gg0Kz2F2BymQyXDlTqnayuRyBFE7cisFCh2dSb1HIumZCRHuZikgeqXm8ruUoaxk5tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -276,162 +435,100 @@
 			initAutocomplete();
 		});
 	</script>
+
+	<style>
+		.devbridge-autocomplete {
+			background: #fff;
+			border: none;
+			box-shadow: 0 14px 36px 0 rgba(77, 98, 109, 0.25);
+			max-height: none!important;
+			overflow: auto;
+			padding: 20px;
+		}
+
+		.devbridge-autocomplete .autocomplete-group {
+			font-weight: bold;
+			margin: 0 0 15px 0;
+			padding: 15px 0 0 0;
+		}
+
+		.devbridge-autocomplete .autocomplete-group:first-child {
+			padding-top: 0;
+		}
+
+		.devbridge-autocomplete .autocomplete-group .type {
+			font-weight: normal;
+			text-transform: uppercase;
+			font-size: 1rem;
+			margin-left: 5px;
+		}
+
+		.devbridge-autocomplete .autocomplete-group .more {
+			float: right;
+			margin-right: 5px;
+			text-transform: lowercase;
+			text-decoration: underline;
+			font-weight: 400;
+		}
+
+		.devbridge-autocomplete .autocomplete-group .show-all {
+			color: #008542;
+			padding: 5px 5px 5px 0;
+			content: "\00BB";
+			margin-left: 5px;
+		}
+
+		.devbridge-autocomplete .autocomplete-group .show-all a {
+			text-decoration: underline;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion {
+			margin: 0 0 15px 0;
+			padding: 5px;
+			white-space: normal;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion a {
+			text-decoration: none;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion a:hover {
+			text-decoration: none;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion:last-child {
+			margin: 0;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion .title {
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			color: #545454;
+			font-weight: 600;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion .summary {
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			color: #7d9aaa;
+			font-size: 0.75rem;
+		}
+
+		.devbridge-autocomplete .autocomplete-suggestion .show-all {
+			font-size: 12.5px;
+			text-decoration: underline;
+		}
+
+		.devbridge-autocomplete .autocomplete-selected:not(:last-child) {
+			background: #f5f5f5;
+		}
+
+		.devbridge-autocomplete .autocomplete-no-suggestion {
+			font-size: 0.875rem;
+			text-align: center;
+			color: #7d9aaa;
+		}
+	</style>
 </#if>
-
-<style>
-	.devbridge-autocomplete {
-		background: #fff;
-		border: none;
-		box-shadow: 0 14px 36px 0 rgba(77, 98, 109, 0.25);
-		max-height: none!important;
-		overflow: auto;
-		padding: 20px;
-	}
-
-	.devbridge-autocomplete .autocomplete-group {
-		font-weight: bold;
-		margin: 0 0 15px 0;
-		padding: 15px 0 0 0;
-	}
-
-	.devbridge-autocomplete .autocomplete-group:first-child {
-		padding-top: 0;
-	}
-
-	.devbridge-autocomplete .autocomplete-group .type {
-		font-weight: normal;
-    text-transform: uppercase;
-    font-size: 1rem;
-    margin-left: 5px;
-	}
-
-	.devbridge-autocomplete .autocomplete-group .more {
-		float: right;
-		margin-right: 5px;
-    text-transform: lowercase;
-    text-decoration: underline;
-    font-weight: 400;
-	}
-
-	.devbridge-autocomplete .autocomplete-group .show-all {
-    color: #008542;
-    padding: 5px 5px 5px 0;
-    content: "\00BB";
-		margin-left: 5px;
-	}
-
-	.devbridge-autocomplete .autocomplete-group .show-all a {
-		text-decoration: underline;
-	}
-
-	.devbridge-autocomplete .autocomplete-suggestion {
-		margin: 0 0 15px 0;
-		padding: 5px;
-		white-space: normal;
-	}
-
-	.devbridge-autocomplete .autocomplete-suggestion a {
-		text-decoration: none;
-	}
-
-	.devbridge-autocomplete .autocomplete-suggestion a:hover {
-		text-decoration: none;
-	}
-
-	.devbridge-autocomplete .autocomplete-suggestion:last-child {
-		margin: 0;
-	}
-
-	.devbridge-autocomplete .autocomplete-suggestion .title {
-		overflow-x: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		color: #545454;
-    font-weight: 600;
-	}
-
-  .devbridge-autocomplete .autocomplete-suggestion .summary {
-		overflow-x: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-    color: #7d9aaa;
-    font-size: 0.75rem;
-	}
-
-  .devbridge-autocomplete .autocomplete-suggestion .show-all {
-    font-size: 12.5px;
-    text-decoration: underline;
-  }
-
-  .devbridge-autocomplete .autocomplete-selected:not(:last-child) {
-    background: #f5f5f5;
-  }
-
-  .devbridge-autocomplete .autocomplete-no-suggestion {
-    font-size: 0.875rem;
-    text-align: center;
-    color: #7d9aaa;
-  }
-</style>
-
-
-<style>
-  .neo_search-bar-container .panel-body {
-    padding: 0;
-  }
-
-  .neo_search-bar-container .search-bar-input {
-    border-radius: 8px;
-    border: 1px solid var(--cinza-3, #89837E);
-    background: var(--branco, #FFF);
-    width: 100%;
-    padding: 6px 16px;
-    line-height: 28px;
-    color: var(--cinza-1, #3A3735);
-  }
-
-  .neo_search-bar-container .search-bar-input:focus, .neo_search-bar-container .search-bar-input:focus-visible {
-    box-shadow: none;
-    outline: none;
-    border: 1px solid var(--verde-2-principal, #00A443);
-  }
-
-  .neo_search-bar-container .search-bar-buttons-wrapper {
-    flex-shrink: 0;
-    width: 100%;
-    display: flex;
-    column-gap: 16px;
-    margin-top: 16px;
-  }
-
-  .neo_search-bar-container .search-bar-button {
-    display: inline-flex;
-    gap: 16px;
-    flex-grow: 1;
-    padding: 8px 24px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px !important;
-  }
-
-  .neo_search-bar-container .search-bar-button--outline {
-    background: var(--branco, #FFF);
-    color: var(--btn-primary-border-color, #00A443);
-  }
-
-  .neo_search-bar-container .search-bar-button > span.material-symbols-outlined {
-    font-size: 1rem;
-  }
-
-  @media (min-width: 1080px) {
-    .neo_search-bar-container .input-group {
-      flex-wrap: nowrap;
-    }
-
-    .neo_search-bar-container .search-bar-buttons-wrapper {
-      width: fit-content;
-      margin-top: 0;
-      margin-left: 24px;
-    }
-  }
-</style>
