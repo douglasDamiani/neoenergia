@@ -2,11 +2,33 @@
   "fieldSets": [
     {
       "fields": [
+				{ 
+          "name": "isBorder",
+          "label": "Adicionar borda arredondada",
+          "description": "",
+          "type": "checkbox",
+          "defaultValue": true
+        },
         {
-          "dataType": "object",
-          "label": "text-color",
-          "name": "textColor",
-          "type": "colorPalette"
+          "name": "hasButton",
+          "label": "Adicionar botão",
+          "description": "",
+          "type": "checkbox",
+          "defaultValue": false
+        },
+        {
+          "name": "isExternalLink",
+          "label": "Adcionar ícone de link externo",
+          "description": "",
+          "type": "checkbox",
+          "defaultValue": false
+        },
+				{
+          "name": "hasColumn",
+          "label": "Remover colunas",
+          "description": "",
+          "type": "checkbox",
+          "defaultValue": true
         }
       ]
     }
