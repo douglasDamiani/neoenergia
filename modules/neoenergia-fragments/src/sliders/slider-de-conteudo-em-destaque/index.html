@@ -6,11 +6,18 @@
         [#list 1..configuration.quantityCardHighlight as item]
         <div class="swiper-slide neo_slider_highlight_content_item">
           <img src="" data-lfr-editable-id="img-${item}" data-lfr-editable-type="image" />
-          <div>
+          <div class="item-content">
             <h3 data-lfr-editable-id="title-${item}" data-lfr-editable-type="text">Titulo editavel</h3>
-            <div data-lfr-editable-id="text-${item}" data-lfr-editable-type="rich-text">Texto editavel</div>
-            <a title="Link para a página" data-lfr-editable-id="link-${item}" data-lfr-editable-type="link"><span>Ler mais sobre</span><span
-                class="material-symbols-outlined card-services__icon">arrow_forward</span></a>
+            <div class="description" data-lfr-editable-id="text-${item}" data-lfr-editable-type="rich-text">Texto editavel</div>
+						<a title="Link para a página" class="neo-slider_highlight__link" href="">
+							 <span data-lfr-editable-id="link-text-${item}" data-lfr-editable-type="text">Ler mais sobre</span>
+               <img data-lfr-editable-id="link-image-${item}" data-lfr-editable-type="image" src="[resources:arrow_forward.svg]" class="card-services-arrow__icon" />
+						 </a>
+						<div class="neo-slider_highlightlink-placeholder-container">
+					    <a class="neo-slider_highlight__link-placeholder" href="" data-lfr-editable-id="neo-slider_highlight__link-placeholder-${item}" data-lfr-editable-type="link">
+                Link do item
+              </a>
+				    </div>
           </div>
         </div>
         [/#list]

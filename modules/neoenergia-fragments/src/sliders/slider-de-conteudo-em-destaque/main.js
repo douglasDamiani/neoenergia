@@ -1,3 +1,5 @@
+const isEditClass = document.querySelector('body').classList.contains('has-edit-mode-menu') 
+
 var swiper = new Swiper('.neo_slider_highlight_content_instance', {
   navigation: {
     nextEl: '.neo_slider_highlight_content_instance_actions_btn_next',
@@ -15,3 +17,13 @@ var swiper = new Swiper('.neo_slider_highlight_content_instance', {
     }
   }
 });
+
+if (!isEditClass){
+  const placeholderLinks = fragmentElement.querySelectorAll('.neo-slider_highlight__link-placeholder');
+  const realLinks = fragmentElement.querySelectorAll('.neo-slider_highlight__link');
+
+  placeholderLinks.forEach((cur_placeholderLink, index) => {
+	  realLinks[index].href = cur_placeholderLink.href;
+	  cur_placeholderLink.remove();
+  })
+}
