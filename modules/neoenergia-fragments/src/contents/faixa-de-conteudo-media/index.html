@@ -1,4 +1,8 @@
-<div class="neo_faixa_media_box  [#if configuration.isBorder] neo_faixa_media_box-border [/#if]">
+[#if configuration.hasBorder] 
+  [#assign border = "style=border-radius:24px;" /] 
+[/#if]
+
+<div class="neo_faixa_media_box" ${border}>
   [#if configuration.hasColumn]
   <div class="neo_faixa_media_box__container neo_flex-column">
   [#else]

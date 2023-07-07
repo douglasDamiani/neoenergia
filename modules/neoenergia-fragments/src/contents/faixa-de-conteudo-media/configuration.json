@@ -3,8 +3,8 @@
     {
       "fields": [
 				{ 
-          "name": "isBorder",
-          "label": "Adicionar borda arredondada",
+          "name": "hasBorder",
+          "label": "Tem borda arredondada?",
           "description": "",
           "type": "checkbox",
           "defaultValue": true
