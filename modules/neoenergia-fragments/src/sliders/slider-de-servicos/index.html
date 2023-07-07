@@ -1,10 +1,21 @@
+[#assign quantityItems = configuration.quantityCards?number /] 
+
+[#macro card index]
+  <div class="swiper-slide neo_slider_services_item">
+    [#if configuration.hasIcon]
+      <img src="placeholder.jpg" alt="Placeholder" data-lfr-editable-id="imagem-${index}" data-lfr-editable-type="image">
+    [/#if]
+    [#if configuration.hasTitle]
+      <a  target="_blank" data-lfr-editable-id="link-${index}" data-lfr-editable-type="link" href=""></a>
+    [/#if]
+  </div>
+[/#macro]
+
 <section class="container-fluid container-fluid-max-xl">
   <div class="neo_slider_services">
     <div class="swiper-wrapper">
-      [#list 1..configuration.quantityCards as item]
-      <div class="swiper-slide neo_slider_services_item">
-        <lfr-drop-zone data-lfr-drop-zone-id="dropzone-${item}"></lfr-drop-zone>
-      </div>
+      [#list 1..quantityItems as item]
+        [@card item/]
       [/#list]
     </div>
   </div>
