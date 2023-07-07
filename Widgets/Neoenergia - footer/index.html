@@ -1,0 +1,28 @@
+<#if entries?has_content>
+	<div class="container-fluid container-fluid-max-xl footer__grid">
+	  <#list entries as navigationEntry>
+			<div class="footer__grid-item">
+				<#if !navigationEntry.isBrowsable()>
+			    <h4>${navigationEntry.getName()}</h4>
+				</#if>
+				
+				<#if navigationEntry.isBrowsable()>
+				 <h4>
+					  <a title="${navigationEntry.getName()}" href="${navigationEntry.getURL()}">${navigationEntry.getName()}</a>
+				 </h4>	
+				</#if>
+				
+				<#if navigationEntry.hasChildren()>
+					<ul role="list" class="footer__list-page-items">
+				    <#list navigationEntry.getChildren() as childNavigationEntry>
+							<li>
+						    <a title="${childNavigationEntry.getName()}" href="${childNavigationEntry.getURL()}">${childNavigationEntry.getName()}</a>
+							</li>
+					  </#list>
+					</ul>
+				</#if>
+			</div>
+	  </#list>
+	</div>
+</#if>
+
