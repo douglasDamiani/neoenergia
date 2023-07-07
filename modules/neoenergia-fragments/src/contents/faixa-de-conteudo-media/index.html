@@ -1,7 +1,31 @@
-<div class="faixa-de-conteudo-media">
-  <h1>
-    <lfr-editable id="title" type="text">
-      Faixa de conteudo media
-    </lfr-editable>
-  </h1>
+<div class="neo_faixa_media_box  [#if configuration.isBorder] neo_faixa_media_box-border [/#if]">
+  [#if configuration.hasColumn]
+  <div class="neo_faixa_media_box__container neo_flex-column">
+  [#else]
+  <div class="neo_faixa_media_box__container">
+  [/#if]
+    <div class="neo_faixa_media_box__text-info">
+      <span arial-hidden="true" class="material-symbols-outlined icon-bolt">bolt</span>
+      <div class="neo_faixa_media_box__text-box">
+        <h3 data-lfr-editable-id="neo_faixa_media_box__text-box" data-lfr-editable-type="text">Projetos de hidrogênio verde e eólica offshore no Sudeste</h3>
+      </div>
+    </div>
+    <div class="neo_faixa_media_box__text-description">
+      <p data-lfr-editable-id="neo_faixa_media_box__text-description" data-lfr-editable-type="rich-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aspernatur illum, beatae ducimus deleniti dolore id voluptatibus ut! Sed minima soluta quos qui, similique unde. Unde natus consectetur totam repellat.
+      </p>
+      [#if configuration.hasButton]
+      <button class="neo_faixa_media_box__button">
+        <a data-lfr-editable-id="faixa-destaque-link" data-lfr-editable-type="link"></a>
+        <span aria-hidden="true" class="material-symbols-outlined">
+          [#if configuration.isExternalLink]
+          arrow_outward
+          [#else]
+          arrow_forward
+          [/#if]
+        </span>
+      </button>
+      [/#if]
+    </div>
+  </div>
 </div>
