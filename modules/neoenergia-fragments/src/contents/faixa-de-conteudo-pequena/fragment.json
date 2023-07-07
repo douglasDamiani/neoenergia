@@ -1,9 +1,10 @@
 {
-  "cssPath": "styles.css",
   "configurationPath": "configuration.json",
+  "jsPath": "index.js",
   "htmlPath": "index.html",
-  "jsPath": "main.js",
+  "cssPath": "index.css",
+  "icon": "code",
   "name": "Faixa de conteudo pequena",
-  "type": "component",
-  "thumbnailPath": "thumbnail.png"
+  "thumbnailPath": "thumbnail.png",
+  "type": "component"
 }
