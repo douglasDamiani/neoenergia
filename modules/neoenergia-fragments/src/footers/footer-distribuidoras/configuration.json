@@ -1,0 +1,43 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "numberOfSocialMedias",
+          "label": "Quantidade de Redes Sociais",
+          "description": "Insira um número válido",
+          "type": "text",
+          "defaultValue": "5"
+        },
+        {
+          "name": "numberOfSupportingChannels",
+          "label": "Quantidade de Canais de Atendimento",
+          "description": "Insira um número válido",
+          "type": "text",
+          "defaultValue": "2"
+        },
+        {
+          "name": "numberOfUtilLinks",
+          "label": "Quantidade de links úteis",
+          "description": "Insira um número válido",
+          "type": "text",
+          "defaultValue": "2"
+        },
+        {
+          "name": "numberOfSupportingCompanies",
+          "label": "Quantidade de Empresas Apoiadoras",
+          "description": "Insira um número válido",
+          "type": "text",
+          "defaultValue": "3"
+        },
+        {
+          "name": "numberOfSiteCertificates",
+          "label": "Quantidade de Certificados do Site",
+          "description": "Insira um número válido",
+          "type": "text",
+          "defaultValue": "4"
+        }
+      ]
+    }
+  ]
+}
