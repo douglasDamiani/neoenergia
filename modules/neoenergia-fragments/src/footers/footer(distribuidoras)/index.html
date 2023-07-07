@@ -1,0 +1,84 @@
+[#assign utilLinks = configuration.numberOfUtilLinks?number  /]
+[#assign supportingCompanies = configuration.numberOfSupportingCompanies?number  /]
+[#assign supportingChannels = configuration.numberOfSupportingChannels?number  /]
+[#assign socialMedias = configuration.numberOfSocialMedias?number   /]
+[#assign siteCertificates = configuration.numberOfSiteCertificates?number  /]
+
+[#macro showSocialMedia]
+	[#list 1..socialMedias as cur_socialMedia]
+    <img src="placeholder.jpg" alt="Placeholder" data-lfr-editable-id="footer-image-socialMedia-${cur_socialMedia}" data-lfr-editable-type="image" style="max-width: 120px; height: auto;">
+  [/#list]
+[/#macro]
+
+<footer class="footer">
+	<div class="container-fluid container-fluid-max-xl">
+    <div class="footer__top">
+        <div class="footer__top_logos">
+					[@showSocialMedia /]
+        </div>
+
+			<div class="footer__header_logo">
+          <img alt="Logo da Neoenergia" class="header__logo" src="[resources:logo_negative.svg]"/>
+        </div>
+    </div>
+
+    <div class="footer__mid">
+      <div class="footer__mid_links">
+        <ul class="footer__mid_list">
+          <li class="footer__mid_list_item"><a class="footer__mid_link">Política de privacidade</a></li>
+          <li class="footer__mid_list_item"><a class="footer__mid_link">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__mid_logos">
+          [@showSocialMedia /]
+      </div>
+
+      <div class="footer__mid_pages">
+        <div class="footer__mid_pages-supChannels">
+          <p class="footer__mid_pages-title">
+            Canais de Atendimento
+          </p>
+            [#list 1..supportingChannels as cur_supportingChannel]
+              <a data-lfr-editable-id="footer-supportingChannel-${cur_supportingChannel}" data-lfr-editable-type="link">Lorem Ipsum</a>
+            [/#list]
+        </div>
+          
+        
+        <div class="footer__mid_pages-utilLinks">
+          <p class="footer__mid_pages-title">
+            Links Úteis
+          </p>
+          [#list 1..utilLinks as utilLink]
+            <a data-lfr-editable-id="footer-utilLink-${utilLink}" data-lfr-editable-type="link">Lorem Ipsum</a>
+          [/#list]
+        </div>
+        
+        <div class="footer__mid_pages-supCompanies">
+          <p class="footer__mid_pages-title">
+          Está Empresa tem Apoio de:
+          </p>
+          <div>
+            [#list 1..supportingCompanies as cur_supportingCompany]
+              <img src="placeholder.jpg" alt="Placeholder" data-lfr-editable-id="footer-image-supportingCompany-${cur_supportingCompany}" data-lfr-editable-type="image" style="max-width: 120px; height: auto;">
+            [/#list]
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+
+  <div class="footer__bottom">
+    <div class="container-fluid container-fluid-max-xl">
+      <div>
+        <span data-lfr-editable-id="footer-bottom-copyright-${fragmentEntryLinkNamespace}" data-lfr-editable-type="rich-text">© ${.now?string('yyyy')} Neoenergia. Todos os direitos reservados</span>
+        <a data-lfr-editable-id="footer-bottom-politica-privacidade-${fragmentEntryLinkNamespace}" data-lfr-editable-type="link" class="footer__bottom_politica-privacidade" >Política de privacidade</a>
+      </div>
+      <ul class="footer__bottom_list">
+				[#list 1..siteCertificates as cur_siteCertificate]
+				 <li><img src="placeholder.jpg" alt="Placeholder" data-lfr-editable-id="footer-image-siteCertificate-${cur_siteCertificate}" data-lfr-editable-type="image" style="max-width: 32px; max-height: 18.5px;"></li>
+				[/#list]
+      </ul>
+    </div>
+  </div>
+</footer>
