@@ -1,0 +1,40 @@
+[#macro getValues obj]
+  [#assign 
+    rootElement = obj.getDocument().getRootElement() 
+    bannerImageObj = rootElement.selectSingleNode("//dynamic-element[@field-reference='banner_image']").element("dynamic-content").getText()?eval
+    content = rootElement.selectSingleNode("//dynamic-element[@field-reference='content']").element("dynamic-content").getStringValue()?trim
+    description = content?keep_before(".")
+  ]
+
+  [#if bannerImageObj?has_content]
+    [#assign   
+      bannerImageSrc = bannerImageObj.url
+      bannerImageAlt = bannerImageObj.alt
+    ]
+  [#else]
+    [#assign   
+      bannerImageSrc = "#"
+      bannerImageAlt = "This post has no image"
+    ]
+   [/#if]
+[/#macro]
+
+[#if collectionObjectList?has_content] 
+  [#assign item = collectionObjectList?sequence[0]]
+     [@getValues obj=item /]
+         <div class="hero-noticias-destaque">
+           <div class="hero-noticias-destaque__container">
+             <div class="hero-noticias-destaque__image-container">
+                <img class="hero-noticias-destaque__image" aria-hidden="true" src="${bannerImageSrc}" alt="${bannerImageAlt}">
+                 <div class="hero-noticias-destaque__square">
+                   <h2 class="hero-noticias-destaque__title">${item.title}</h2>
+                   <div class="hero-noticias-destaque__description">${description}</div>
+                   <a class="hero-noticias-destaque__link" href="/w/${item.getUrlTitle()}">
+                     <span class="hero-noticias-destaque__link-text">Continue lendo</span>
+                     <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                   </a>
+                 </div>    
+							 </div>
+              </div>
+            </div>
+[/#if]

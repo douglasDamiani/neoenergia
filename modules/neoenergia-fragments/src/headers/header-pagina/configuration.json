@@ -1,0 +1,22 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "numberOfSocialMedias",
+          "label": "Quantidade de Redes Sociais",
+          "description": "Insira um número válido",
+          "type": "text",
+          "defaultValue": "5"
+        },
+				{
+           "name": "defaultSocialMedias",
+           "label": "Usar redes sociais padrão",
+           "description": "",
+           "type": "checkbox",
+           "defaultValue": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[#assign socialMedias = configuration.numberOfSocialMedias?number /] 
+
+<div class="page-header">
+  <div class=" container-fluid-max-xl">
+    <div class="w-100 position-relative">
+      [@liferay_portlet["runtime"]
+      portletName="com_liferay_site_navigation_breadcrumb_web_portlet_SiteNavigationBreadcrumbPortlet_INSTANCE_lfif"
+      /]
+    </div>
+    <div class="page-title">
+      <h2
+        data-lfr-editable-id="page-title-${fragmentEntryLinkNamespace}"
+        data-lfr-editable-type="text"></h2>
+			
+      <div class="page-title-social-medias">
+        [#if configuration.defaultSocialMedias]
+          <img
+            src="[resources:twitter-green.svg]"
+            alt="Icone do Twitter"
+            data-lfr-editable-id="page-title-socialMedia-twitter"
+            data-lfr-editable-type="image"
+            style="width: 32px; height: 32px"
+          />
+          <img
+            src="[resources:face-green.svg]"
+            alt="Icone do Facebook"
+            data-lfr-editable-id="page-title-socialMedia-face"
+            data-lfr-editable-type="image"
+            style="width: 32px; height: 32px"
+          />
+          <img
+            src="[resources:insta-green.svg]"
+            alt="Icone do Instagram"
+            data-lfr-editable-id="page-title-socialMedia-insta"
+            data-lfr-editable-type="image"
+            style="width: 32px; height: 32px"
+          />
+          <img
+            src="[resources:linkedin-green.svg]"
+            alt="Icone do LinkedIn"
+            data-lfr-editable-id="page-title-socialMedia-linkedin"
+            data-lfr-editable-type="image"
+            style="width: 32px; height: 32px"
+          />
+          <img
+            src="[resources:youtube-green.svg]"
+            alt="Icone do YouTube"
+            data-lfr-editable-id="page-title-socialMedia-youtube"
+            data-lfr-editable-type="image"
+            style="width: 32px; height: 32px"
+          />
+        [#else]
+          [#if socialMedias > 0 ] 
+            [#list 1..socialMedias as cur_socialMedia]
+              <img
+                src="placeholder"
+                alt="placeholder"
+                data-lfr-editable-id="page-title-socialMedia-${cur_socialMedia}"
+                data-lfr-editable-type="image"
+                style="width: 32px; height: 32px"
+              />
+            [/#list] 
+          [/#if]
+        [/#if]
+      </div>
+    </div>
+  </div>
+</div>

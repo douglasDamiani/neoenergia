@@ -1,0 +1,23 @@
+.page-header{
+ border-bottom: 1px solid #D8CFC7;
+ padding: 56px 0;
+}
+
+.page-header .page-title{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.page-header .page-title h2{
+	font-weight: normal;
+}
+
+
+@media (min-width: 769px){
+  .page-header .page-title{
+	  flex-direction: row;
+	  justify-content: space-between;
+  }
+}
